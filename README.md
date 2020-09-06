@@ -12,7 +12,6 @@
 ### Association
 - has_one: profile, dependent: destroy
 - has_one: destination, dependent: destroy
-- has_one: creditcard, dependent: destroy
 - has_many: orders
 - has_many: comments, dependent: destroy
 
@@ -49,17 +48,6 @@
 |building|string||
 |phone|integer||
 |user|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to: user
-
-
-## creditcards table
-|Column|Type|Options|
-|------|----|-------|
-|user|references|null: false, foreign_key: true|
-|customer_id|integer|null: false|
-|credit_id|integer|null :false|
 
 ### Association
 - belongs_to: user
@@ -142,8 +130,6 @@
 
 - belongs_to: user
 - belongs_to: item
-
-<!-- # コメント機能は追加実装のため不要かもしれない -->
 
 
 
