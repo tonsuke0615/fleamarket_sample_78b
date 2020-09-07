@@ -88,7 +88,6 @@
 - belongs_to_active_hash: shipping_from
 - belongs_to_active_hash: preparation_day
 - has_many: comments, dependent: destroy
-- has_many: item_images, dependent: destroy
 
 
 ## brands table
