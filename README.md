@@ -10,10 +10,10 @@
 |password|string|null: false|
 
 ### Association
-- has_one: profile, dependent: destroy
-- has_one: destination, dependent: destroy
-- has_many: orders, dependent: destory
-- has_many: comments, dependent: destroy
+- has_one :profile, dependent :destroy
+- has_one :destination, dependent :destroy
+- has_many :orders, dependent :destroy
+- has_many :comments, dependent :destroy
 
 
 ## profiles table
@@ -28,7 +28,7 @@
 |user|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to: user
+- belongs_to :user
 
 
 ## destinations table
@@ -48,7 +48,7 @@
 |user|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to: user
+- belongs_to :user
 
 
 ## orders table
@@ -59,8 +59,8 @@
 |item|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to: user
-- belongs_to: item
+- belongs_to :user
+- belongs_to :item
 
 
 ## items table
@@ -80,16 +80,16 @@
 
 ### Association
 
-- belongs_to: brand
-- belongs_to: user
-- belongs_to: order
-- belongs_to_active_hash: category
-- belongs_to_active_hash: shippingfee
-- belongs_to_active_hash: condition
-- belongs_to_active_hash: shipping_from
-- belongs_to_active_hash: preparation_day
-- has_many: comments, dependent: destroy
-- has_many: item_images, dependent: destroy
+- belongs_to :brand
+- belongs_to :user
+- belongs_to_active_hash :category
+- belongs_to_active_hash :shippingfee
+- belongs_to_active_hash :condition
+- belongs_to_active_hash :shipping_from
+- belongs_to_active_hash :preparation_day
+- has_one :order
+- has_many :comments, dependent :destroy
+- has_many :item_images, dependent :destroy
 
 
 ## brands table
@@ -99,7 +99,7 @@
 |name|string|null: false|
 
 ### Association
-- has_many: items
+- has_many :items
 
 
 ## item_images table
@@ -111,7 +111,7 @@
 
 ###Association
 
-- belongs_to: item
+- belongs_to :item
 
 
 ## comments table
@@ -125,8 +125,8 @@
 
 ###Association
 
-- belongs_to: user
-- belongs_to: item
+- belongs_to :user
+- belongs_to :item
 
 
 
