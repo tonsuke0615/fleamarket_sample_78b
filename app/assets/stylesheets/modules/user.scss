@@ -1,0 +1,33 @@
+.User-set__top{
+  height: 80px;
+  background: lightblue;
+}
+
+.User-set__Field{
+  display: flex;
+  display: block;
+  justify-content: center;
+  &__title{
+    display: block;
+  }
+}
+
+.FormField{
+  width: 80%;
+  display: flex;
+  display: block;
+  justify-content: center;
+  &__name{
+    display: flex;
+    justify-content: space-around;
+  }
+  &__name-kana{
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.User-set__botom{
+  height: 100px;
+  background: darkgray;
+}
