@@ -72,10 +72,10 @@
 |price|integer|null: false|
 |category|integer|null: false|
 |brand|references|foreign_key: true|
-|shippingfee|references|null: false, foreign_key: true|
-|condition|references|null: false, foreign_key: true|
-|shipping_from|references|null: false, foreign_key: true|
-|preparation_day|references|null: false, foreign_key: true|
+|shippingfee|integer|null: false|
+|condition|integer|null: false|
+|shipping_from|integer|null: false|
+|preparation_day|integer|null: false|
 |user|references|null: false, foreign_key: true|
 
 ### Association
