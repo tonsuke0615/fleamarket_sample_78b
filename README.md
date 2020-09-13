@@ -10,10 +10,11 @@
 |password|string|null: false|
 
 ### Association
-- has_one :profile, dependent :destroy
-- has_one :destination, dependent :destroy
-- has_many :orders, dependent :destroy
-- has_many :comments, dependent :destroy
+- has_one :profile, dependent: :destroy
+- has_one :destination, dependent: :destroy
+- has_many :orders, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_one :creditcard, dependent: :destroy
 
 
 ## profiles table
@@ -50,6 +51,18 @@
 ### Association
 - belongs_to :user
 
+## creditcards table
+
+|Column|Type|Options|
+|------|----|-------|
+|card_id|references|null: false, foreign_key: true|
+|customer_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+<!-- コードレビューしていないため、referenece型かinteger型なのかはテーブル作成時に要確認 -->
+
+## Association
+- belongs_to :user
+
 
 ## orders table
 |Column|Type|Options|
@@ -72,12 +85,12 @@
 |price|integer|null: false|
 |category|integer|null: false|
 |brand|references|foreign_key: true|
-|shippingfee|references|null: false, foreign_key: true|
-|condition|references|null: false, foreign_key: true|
-|shipping_from|references|null: false, foreign_key: true|
-|preparation_day|references|null: false, foreign_key: true|
+|shippingfee|integer|null: false|
+|condition|integer|null: false|
+|shipping_from|integer|null: false|
+|preparation_day|integer|null: false|
 |user|references|null: false, foreign_key: true|
-
+<!-- active_hashを使用するものはreference型ではなくintegerでforeign_keyも使用しない（レビューにて確認） -->
 ### Association
 
 - belongs_to :brand
