@@ -37,32 +37,81 @@
         = image_tag 'google-play-badge (1).png' , class:'googlebtn' , width: '190'
 
   .Top_introduction
-    .Top_introduction__box
-      .Top_introduction__box--subtitle
+    .Top_introduction__box__top
+      .Top_introduction__box__top--title
         FURIMAが選ばれる3つの理由
-      .Top_introduction__box--line
-      %ul.Top_introduction__box__lists
-        %li.Top_introduction__box__lists__one
-          %span.number'1'
-          =image_tag 'pict-reason-01.jpg', class:'listone'
-          .Top_introduction__box__lists__one--green
-          '3分'
-          %span.Top_introduction__box__lists__one--black
-          ですぐに出品
-          %p.Top_introduction__box__lists__one--text
+      .Top_introduction__box__top--line
+    %ul.Top_introduction__box__mains
+      %li.Top_introduction__box__mains__main
+        = image_tag 'pict-reason-01.jpg', class:'list'
+        .Top_introduction__box__mains__main__subtitle
+          .Top_introduction__box__mains__main__subtitle--green
+            3分
+          .Top_introduction__box__mains__main__subtitle--black
+            ですぐに出品
+        .Top_introduction__box__mains__main__text
           スマホで入力するだけで簡単に出品できる！
-
-          %li.Top_introduction__box__lists__two
-            %span.number'2'
-          =image_tag 'pict-reason-02.jpg', class:'listtwo'
-          %span
-          'シンプル'
-          で使いやすい
-          めんどくさい入力は必要なく、検索もスムーズ！
-        %li.Top_introduction__box__lists__three
-          %span.number'3'
-          =image_tag 'pict-reason-03.jpg', class:'listthree'
-          手数料
-          %span
-          '業界最安’
+        .Top_introduction__box__mains__main__num
+          1
+      %li.Top_introduction__box__mains__main
+        = image_tag 'pict-reason-02.jpg', class:'list'
+        .Top_introduction__box__mains__main__subtitle
+          .Top_introduction__box__mains__main__subtitle--green
+            シンプル
+          .Top_introduction__box__mains__main__subtitle
+            で使いやすい
+        .Top_introduction__box__mains__main__text
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+        .Top_introduction__box__mains__main__num
+          2
+      %li.Top_introduction__box__mains__main--last
+        = image_tag 'pict-reason-03.jpg', class:'list'
+        .Top_introduction__box__mains__main__subtitle
+          .Top_introduction__box__mains__main__subtitle--black
+            手数料
+          .Top_introduction__box__mains__main__subtitle--green
+            業界最安
+        .Top_introduction__box__mains__main__text--last
           最大3%でお得に出品＆購入！
+        .Top_introduction__box__mains__main__num
+          3
+
+  .Top_middle__block
+    .Top_middle__block__in-box
+      .Top_middle__block__in-box__title
+        会員数日本一位！
+      .Top_middle__block__in-box__text
+        %p FURIMAは、フリマアプリで最も人気！
+        %p 出品・購入回数も業界最多です！
+        %p 欲しかったあの商品に出会えるかもしれません。
+      .Top_middle__block__in-box__btn
+        = image_tag 'AnyConv.com__Download_on_the_App_Store_Badge_US-UK_blk_092917.png', class:'appbtn'
+        = image_tag 'google-play-badge (1).png' , class:'googlebtn' , width: '190'
+
+  .Top_bottom__block
+    .Top_bottom__block__containerfeatures
+      .Top_bottom__block__containerfeatures__title
+        FURIMAの特徴
+      .Top_bottom__block__containerfeatures__items
+        .Top_bottom__block__containerfeatures__items__lists
+          .Top_bottom__block__containerfeatures__items__lists__list
+            = image_tag 'icon-01.png', class:'containerfeatures_image'
+            .Top_bottom__block__containerfeatures__items__subtitle
+              簡単に売り買いできる
+            .Top_bottom__block__containerfeatures__items__content
+              スマホ1つで、いつでもどこでも出品、購入が可能！
+        .Top_bottom__block__containerfeatures__items__lists
+          .Top_bottom__block__containerfeatures__items__lists__list
+            = image_tag 'icon-03.png', class:'containerfeatures_image'
+            .Top_bottom__block__containerfeatures__items__subtitle
+              売上金は即日振り込みに対応
+            .Top_bottom__block__containerfeatures__items__content
+              午前9時までに振り込みをいただければ、翌日に指定の口座に入金いたします！
+        .Top_bottom__block__containerfeatures__items__lists
+          .Top_bottom__block__containerfeatures__items__lists__list
+            = image_tag 'icon-04.png', class:'containerfeatures_image'
+            .Top_bottom__black__containerfeatures__items__subtitle
+              様々な支払いに対応
+            .Top_bottom__block__containerfeatures__items__content
+              お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+          
