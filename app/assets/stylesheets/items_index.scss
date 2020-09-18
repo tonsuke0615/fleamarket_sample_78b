@@ -130,7 +130,7 @@
       font-weight: bold;
       padding-bottom: 7px;
     }
-    &--line {
+    .line {
       height: 4px;
       width: 70px;
       margin: 0 auto;
@@ -255,6 +255,14 @@
     padding-bottom: 15px;
     position: relative;
   }
+  .line {
+    height: 4px;
+    width: 70px;
+    margin: 0 auto;
+    background-color: #3CCACE;
+    bottom: 0;
+    left: 50%;
+  }
   &__items {  
     max-width: calc(1040px + 20px);
     width: 100%;
@@ -270,17 +278,22 @@
         width: 70%;
         margin: 0 auto;
         line-height: 120px;
+      }
       &__subtitle {
         margin: 38px 0 10px;
         font-size: 19px;
         font-weight: bold;
+      }
       &__content {
         margin: 0 0 40px;
         font-size: 17px;
         font-weight: 200;
         text-align: left;
       }
-      }
+      .item__subtitle {
+        margin: 38px 0 10px;
+        font-size: 19px;
+        font-weight: bold;
       }
     }
   }
