@@ -8,7 +8,7 @@
 }
 
 .Contents{
-    background-color: #3CCACE;
+    background-color: white;
     width: 50%;
     padding-bottom: 40px;
   &__message {
@@ -60,6 +60,7 @@
 .formSize {
   width: 580px;
   height: 30px;
+  border: 0.5px solid lightgray;
 }
 
 .Button {
@@ -70,6 +71,9 @@
   &__submit {
     height: 50px;
     width: 300px;
-    
+    background-color: #3CCACE;
+    border: none;
+    color: white;
+    font-size: 20px;
   }
 }

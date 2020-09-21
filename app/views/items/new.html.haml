@@ -28,7 +28,7 @@
         .ItemInfo__text--require
           ※必須
         .ItemInfo__name--form
-          = f.text_field :name, placeholder: "(例)【新品】Adidas　Tシャツ", size: 71, maxlength: 20
+          = f.text_field :name, placeholder: "(例)【新品】Adidas　Tシャツ", class: "formSize"
       .ItemInfo
         .ItemInfo__text
           商品説明（1000文字以内）
@@ -42,7 +42,7 @@
         .ItemInfo__text--require
           ※必須
         .ItemInfo__category--form
-          = f.text_field :name, placeholder: "実際にはカテゴリをプルダウン", size: 71
+          = f.text_field :name, placeholder: "実際にはカテゴリをプルダウン", class: "formSize"
         -#   = f.collection_select :category_id, @categories, :id, :name) {prompt: "カテゴリを選択してください"}
         -# .ItemInfo__category--form
         -#   = f.collection_select :category_id, @categories, :id, :name) {prompt: "カテゴリを選択してください"}
@@ -52,7 +52,7 @@
         .ItemInfo__text
           ブランド（任意）
         .ItemInfo__brand--form
-          = f.text_field :name, placeholder: "(例)シャネル", size: 71
+          = f.text_field :name, placeholder: "(例)シャネル", class: "formSize"
       .ItemInfo
         .ItemInfo__text
           商品の状態
