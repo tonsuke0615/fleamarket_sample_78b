@@ -1,4 +1,5 @@
 // 以下梶山が記述
+
 .MainField {
   background-color: lightgray;
   display: flex;
@@ -11,24 +12,34 @@
     width: 50%;
     padding-bottom: 40px;
   &__message {
-    font-size: 30px;
+    font-size: 10px;
     text-align: center;
   }
+}
+
+.ImageBox {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 0.5px solid lightgray;
 }
 
 .ItemInfo {
   padding-left: 30px;
   padding-right: 30px;
-  padding-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 30px;
   border-bottom: 0.5px solid lightgray;
   &__text {
     display: inline;
     &--require {
       display: inline;
+      background-color: coral;
       color: white;
-      background-color: red;
-      font-size: 12px;
-      padding: 3px;
+      text-align: center;
+      vertical-align: middle;
+      width: 40px;
+      font-size: 2px;
+      padding: 3px 5px;
     }
   }
 }
@@ -46,11 +57,19 @@
   }
 }
 
+.formSize {
+  width: 580px;
+  height: 30px;
+}
 
-
-
-
-
-
-
-
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  &__submit {
+    height: 50px;
+    width: 300px;
+    
+  }
+}
