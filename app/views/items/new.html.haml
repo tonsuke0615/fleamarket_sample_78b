@@ -35,7 +35,7 @@
         .ItemInfo__text--require
           ※必須
         .ItemInfo__detail--form
-          = f.text_area :detail, size: "70x5", maxlength: 1000, placeholder: "（記入例）新品未使用です。１年ほど前に購入しましたが、サイズが合わなかったため使用していません。"
+          = f.text_area :detail, maxlength: 1000, placeholder: "（記入例）新品未使用です。１年ほど前に購入しましたが、サイズが合わなかったため使用していません。", class: "formSize_textarea"
       .ItemInfo
         .ItemInfo__text
           カテゴリ
