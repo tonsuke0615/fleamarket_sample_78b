@@ -7,8 +7,8 @@
       FURIMAはだれでもかんたんに出品・購入できる
       フリマアプリです
     .Main_visual__body__main--btn
-      = image_tag 'AnyConv.com__Download_on_the_App_Store_Badge_US-UK_blk_092917.png', class:'appbtn'
-      = image_tag 'google-play-badge (1).png' , class:'googlebtn' , width: '190'
+      = link_to (image_tag 'AnyConv.com__Download_on_the_App_Store_Badge_US-UK_blk_092917.png', class:'appbtn'),'#'
+      = link_to (image_tag 'google-play-badge (1).png' , class:'googlebtn' , width: '190'),'#'
 
 .Top_introduction
   .Top_introduction__box__top
@@ -59,34 +59,30 @@
       %p 出品・購入回数も業界最多です！
       %p 欲しかったあの商品に出会えるかもしれません。
     .Top_middle__block__in-box__btn
-      = image_tag 'AnyConv.com__Download_on_the_App_Store_Badge_US-UK_blk_092917.png', class:'appbtn'
-      = image_tag 'google-play-badge (1).png' , class:'googlebtn' , width: '190'
+      = link_to (image_tag 'AnyConv.com__Download_on_the_App_Store_Badge_US-UK_blk_092917.png', class:'appbtn'),'#'
+      = link_to (image_tag 'google-play-badge (1).png' , class:'googlebtn' , width: '190'),'#'
 
-.Top_bottom__block
-  .Top_bottom__block__containerfeatures
-    .Top_bottom__block__containerfeatures__title
-      FURIMAの特徴
-    .line
-    .Top_bottom__block__containerfeatures__items
-      .Top_bottom__block__containerfeatures__items__lists
-        .Top_bottom__block__containerfeatures__items__lists__list
-          = image_tag 'icon-01.png', class:'containerfeatures_image'
-          .Top_bottom__block__containerfeatures__items__lists__subtitle
-            簡単に売り買いできる
-          .Top_bottom__block__containerfeatures__items__lists__content
-            スマホ1つで、いつでもどこでも出品、購入が可能！
-      .Top_bottom__block__containerfeatures__items__lists
-        .Top_bottom__block__containerfeatures__items__lists__list
-          = image_tag 'icon-03.png', class:'containerfeatures_image'
-          .item__subtitle
-            売上金は即日振り込みに対応
-          .Top_bottom__block__containerfeatures__items__lists__content
-            午前9時までに振り込みをいただければ、翌日に指定の口座に入金いたします！
-      .Top_bottom__block__containerfeatures__items__lists
-        .Top_bottom__block__containerfeatures__items__lists__list
-          = image_tag 'icon-04.png', class:'containerfeatures_image'
-          .Top_bottom__block__containerfeatures__items__lists__subtitle
-            様々な支払いに対応
-          .Top_bottom__block__containerfeatures__items__lists__content
-            お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
-        
+.Top_bottom
+  .Top_bottom--title
+    FURIMAの特徴
+  .line
+  .Top_bottom__items
+  %ul.Top_bottom__items__item
+    %li.Top_bottom__items__item__list
+      = image_tag 'icon-01.png', class:'containerfeatures_image'
+      .Top_bottom__items__subtitle
+        簡単に売り買いできる
+      .Top_bottom__items__content
+        スマホ1つで、いつでもどこでも出品、購入が可能！
+    %li.Top_bottom__items__item__list
+      = image_tag 'icon-03.png', class:'containerfeatures_image'
+      .Top_bottom__items__subtitle
+        売上金は即日振り込みに対応
+      .Top_bottom__items____content
+        午前9時までに振り込みをいただければ、翌日に指定の口座に入金いたします！
+    %li.Top_bottom__items__item__list
+      = image_tag 'icon-04.png', class:'containerfeatures_image'
+      .Top_bottom__items__subtitle
+        様々な支払いに対応
+      .Top_bottom__items__content
+        お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
