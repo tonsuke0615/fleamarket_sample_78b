@@ -19,6 +19,6 @@
             ブランド
         %ul.Header__box__action__user
           %li.Header__box__action__user__login
-          = link_to 'ログイン','#', class: 'login'
+          = link_to 'ログイン', user_session_path, class: 'login'
           %li.Header__box__action__user__new
-          = link_to '新規会員登録','#', class: 'new'
+          = link_to '新規会員登録', new_user_registration_path, class: 'new' 
