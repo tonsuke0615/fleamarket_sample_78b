@@ -18,6 +18,7 @@
     &__icon {
       padding-bottom: 10px;
       margin-right: 30px;
+      margin-top: 20px;
       border-radius: 4px;
     }
     &__searchbox {
@@ -28,6 +29,10 @@
         height: 36px;
         padding: 0 0 0 5px;
         display:flex;
+        .input_box__text {
+          width: calc(100% - 26px);
+          height: 36px;
+        }
         .icon__search {
           width: 36px;
           margin-bottom: 5px;
@@ -75,7 +80,7 @@
   background-color:#f8f8f8;
   &__body {
     height: 560px;
-    background-image: image-url('bg-mainVisual-pict_pc.jpg');
+    background-image: url('bg-mainVisual-pict_pc.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
@@ -124,6 +129,7 @@
       margin-bottom: 25px;
       padding-bottom: 15px;
       position: relative;
+    }
     &--line {
       content: "";
       width: 70px;
@@ -133,6 +139,7 @@
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
+    }
     &__lists {
         list-style: none;
         margin-block-start: 1em;
@@ -143,6 +150,26 @@
         font-size: 14px;
         display: flex;
         margin-bottom: 10px;
+      &__list {
+        width: 30%;
+        margin: 16px 5% 0 0;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      &.list--one {
+        position: relative;
+        margin-bottom: 20px;
+      }
+      &.list--two {
+        position: relative;
+        margin-bottom: 20px;
+      }
+      &.list--three {
+        position: relative;
+        margin-bottom: 20px;
+      }
       .number{
         display: inline-block;
         position: absolute;
@@ -155,9 +182,7 @@
         padding: 10px 20px;
         background-color: #3CCACE;
         color: #fff;
-      }
-    }
-    }
+        }
     }
   }
 }
