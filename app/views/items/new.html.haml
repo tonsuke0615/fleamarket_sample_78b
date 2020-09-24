@@ -7,35 +7,40 @@
 
 .MainField
   .Contents
-    = form_with url: "" do |f|
-      .ImageBox
+    = form_with model: @item do |f|
+      .ItemInfo
+        .Contents__message
+          出品情報入力
+      .ItemInfo
         .ItemInfo__text
           商品画像
         .ItemInfo__text--require
           ※必須
-        .ImageField
-          .ImageField__image
-            写真１
-          .ImageField__image
-            写真２
-          .ImageField__image
-            写真３
-          .ImageField__image
-            写真４  
-      .ItemInfo
         .ItemInfo__text
-          商品名(20字以内)
+          (最大10枚までアップロードできます)
+        .ImageField
+          -# 実際には複数枚投稿を別モデルに保存する記述で記載
+          = f.fields_for :item_images do |i|
+            .ImageField__form
+              = f.label :image do
+                = icon('fas', 'camera', class: "ImageField__form--icon")
+                = f.file_field :image, class: "ImageField__form--uploader"
+                -# = i.file_field :src,class: "ImageField__uploader"
+              .ImageField__form--message
+                ドラッグアンドドロップしてアップロード
+        .ItemInfo__text
+          商品名
         .ItemInfo__text--require
           ※必須
         .ItemInfo__name--form
-          = f.text_field :name, placeholder: "(例)【新品】Adidas　Tシャツ", class: "formSize"
+          = f.text_field :name, placeholder: "(例)【新品】Adidas　Tシャツ", class: "formSize" 
       .ItemInfo
         .ItemInfo__text
           商品説明（1000文字以内）
         .ItemInfo__text--require
           ※必須
         .ItemInfo__detail--form
-          = f.text_area :detail, maxlength: 1000, placeholder: "（記入例）新品未使用です。１年ほど前に購入しましたが、サイズが合わなかったため使用していません。", class: "formSize_textarea"
+          = f.text_area :detail, maxlength: 1000, placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例：昨年購入しましたが、似たようなものを持っていたので、着用していません。", class: "formSize__textarea"
       .ItemInfo
         .ItemInfo__text
           カテゴリ
@@ -87,8 +92,9 @@
           価格(¥1〜9,999,999)
         .ItemInfo__text--require
           ※必須
-        .ItemInfo__price--form
-        = f.number_field :price, placeholder: "価格を入力してください", min: 1, max: 9999999, class: "formSize"
+        .ItemInfo__price--form 
+        ¥
+        = f.number_field :price, placeholder: "0", min: 1, max: 9999999, class: "formSize__price"
       .Button
         = f.submit "出品する", class: "Button__submit"
 .Bottom
