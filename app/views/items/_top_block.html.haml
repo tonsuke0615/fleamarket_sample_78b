@@ -1,68 +1,88 @@
-.Topblock
-  .Header
-    .Header__box
-      .Header__box__main
-        .Header__box__main__icon
-          = image_tag 'logo.png', height: '41', width: '140', class: 'title'
-        .Header__box__main__searchbox
-          .Header__box__main__searchbox__inputbox
-            %input{type:'searchinput',class:'input_box__text',placeholder:'キーワードから探す'}
-            %label{class: 'inputbox__icon'}
-              = link_to image_tag 'icon-search1.png', class: 'icon__search'
+.Main_visual
+  .Main_visual__body
+    .Main_visual__body__main
+    .Main_visual__body__main--top
+      人生を変えるフリマアプリ
+    .Main_visual__body__main--middle
+      FURIMAはだれでもかんたんに出品・購入できる
+      フリマアプリです
+    .Main_visual__body__main--btn
+      = link_to (image_tag 'AnyConv.com__Download_on_the_App_Store_Badge_US-UK_blk_092917.png', class:'appbtn'),'#'
+      = link_to (image_tag 'google-play-badge (1).png' , class:'googlebtn' , width: '190'),'#'
 
-             
-      .Header__box__action
-        %ul.Header__box__action__lists
-          %li.Header__box__action__lists__category
-            = image_tag 'icon_category.png', height: '12.5', width: '15' 
-            カテゴリー
-          %li.Header__box__action__lists__brand
-            = image_tag 'icon_brand.png', height: '12.5', width: '15'
-            ブランド
-        %ul.Header__box__action__user
-          %li.Header__box__action__user__login
-          ログイン
-          %li.Header__box__action__user__new
-          新規会員登録
-  .Main_visual
-    .Main_visual__body
-      .Main_visual__body__main
-      .Main_visual__body__main--top
-        人生を変えるフリマアプリ
-      .Main_visual__body__main--middle
-        FURIMAはだれでもかんたんに出品・購入できる
-        フリマアプリです
-      .Main_visual__body__main--btn
-        = image_tag 'AnyConv.com__Download_on_the_App_Store_Badge_US-UK_blk_092917.png', class:'appbtn'
-        = image_tag 'google-play-badge (1).png' , class:'googlebtn' , width: '190'
-
-  .Top_introduction
-    .Top_introduction__box
-      .Top_introduction__box--subtitle
-        FURIMAが選ばれる3つの理由
-      .Top_introduction__box--line
-      %ul.Top_introduction__box__lists
-        %li.Top_introduction__box__lists__one
-          %span.number'1'
-          =image_tag 'pict-reason-01.jpg', class:'listone'
-          .Top_introduction__box__lists__one--green
-          '3分'
-          %span.Top_introduction__box__lists__one--black
+.Top_introduction
+  .Top_introduction__box__top
+    .Top_introduction__box__top--title
+      FURIMAが選ばれる3つの理由
+    .line
+  %ul.Top_introduction__box__mains
+    %li.Top_introduction__box__mains__main
+      = image_tag 'pict-reason-01.jpg', class:'list'
+      .Top_introduction__box__mains__main__subtitle
+        .Top_introduction__box__mains__main__subtitle--green
+          3分
+        .Top_introduction__box__mains__main__subtitle--black
           ですぐに出品
-          %p.Top_introduction__box__lists__one--text
-          スマホで入力するだけで簡単に出品できる！
-
-          %li.Top_introduction__box__lists__two
-            %span.number'2'
-          =image_tag 'pict-reason-02.jpg', class:'listtwo'
-          %span
-          'シンプル'
+      .Top_introduction__box__mains__main__text
+        スマホで入力するだけで簡単に出品できる！
+      .Top_introduction__box__mains__main__num
+        1
+    %li.Top_introduction__box__mains__main
+      = image_tag 'pict-reason-02.jpg', class:'list'
+      .Top_introduction__box__mains__main__subtitle
+        .Top_introduction__box__mains__main__subtitle--green
+          シンプル
+        .Top_introduction__box__mains__main__subtitle
           で使いやすい
-          めんどくさい入力は必要なく、検索もスムーズ！
-        %li.Top_introduction__box__lists__three
-          %span.number'3'
-          =image_tag 'pict-reason-03.jpg', class:'listthree'
+      .Top_introduction__box__mains__main__text
+        めんどくさい入力は必要なく、検索も購入もスムーズ！
+      .Top_introduction__box__mains__main__num
+        2
+    %li.Top_introduction__box__mains__main--last
+      = image_tag 'pict-reason-03.jpg', class:'list'
+      .Top_introduction__box__mains__main__subtitle
+        .Top_introduction__box__mains__main__subtitle--black
           手数料
-          %span
-          '業界最安’
-          最大3%でお得に出品＆購入！
+        .Top_introduction__box__mains__main__subtitle--green
+          業界最安
+      .Top_introduction__box__mains__main__text--last
+        最大3%でお得に出品＆購入！
+      .Top_introduction__box__mains__main__num
+        3
+
+.Top_middle__block
+  .Top_middle__block__in-box
+    .Top_middle__block__in-box__title
+      会員数日本一位！
+    .Top_middle__block__in-box__text
+      %p FURIMAは、フリマアプリで最も人気！
+      %p 出品・購入回数も業界最多です！
+      %p 欲しかったあの商品に出会えるかもしれません。
+    .Top_middle__block__in-box__btn
+      = link_to (image_tag 'AnyConv.com__Download_on_the_App_Store_Badge_US-UK_blk_092917.png', class:'appbtn'),'#'
+      = link_to (image_tag 'google-play-badge (1).png' , class:'googlebtn' , width: '190'),'#'
+
+.Top_bottom
+  .Top_bottom--title
+    FURIMAの特徴
+  .line
+  .Top_bottom__items
+  %ul.Top_bottom__items__item
+    %li.Top_bottom__items__item__list
+      = image_tag 'icon-01.png', class:'containerfeatures_image'
+      .Top_bottom__items__subtitle
+        簡単に売り買いできる
+      .Top_bottom__items__content
+        スマホ1つで、いつでもどこでも出品、購入が可能！
+    %li.Top_bottom__items__item__list
+      = image_tag 'icon-03.png', class:'containerfeatures_image'
+      .Top_bottom__items__subtitle
+        売上金は即日振り込みに対応
+      .Top_bottom__items____content
+        午前9時までに振り込みをいただければ、翌日に指定の口座に入金いたします！
+    %li.Top_bottom__items__item__list
+      = image_tag 'icon-04.png', class:'containerfeatures_image'
+      .Top_bottom__items__subtitle
+        様々な支払いに対応
+      .Top_bottom__items__content
+        お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
