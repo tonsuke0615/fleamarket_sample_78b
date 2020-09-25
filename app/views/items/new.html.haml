@@ -1,9 +1,7 @@
 -# ルーティングのroot item#newを最後に戻すこと
 .Wrapper
 .Top
--#  下記をrenderで持ってこれるように切り分ける
--# .Header
--#   =render ""
+  =render "top_header"
 
 .MainField
   .Contents
@@ -99,7 +97,7 @@
       .Button
         = f.submit "出品する", class: "Button__submit"
 .Bottom
-  ここにフッター
+  =render "bottom_footer"
 
 
 
