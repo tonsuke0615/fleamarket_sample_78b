@@ -136,7 +136,7 @@
 
 - belongs_to :item
 
-
+<!-- 以下は追加実装のため最初は不要 -->
 ## comments table
 
 |Column|Type|Options|
@@ -146,7 +146,7 @@
 |item|references|foreign_key: true|
 |created_at|datetime||
 
-###Association
+### Association
 
 - belongs_to :user
 - belongs_to :item
