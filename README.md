@@ -83,26 +83,36 @@
 |name|string|null: false|
 |detail|text||
 |price|integer|null: false|
-|category|integer|null: false, foreign_key: true|
-|brand|references|foreign_key: true|
-|shippingfee|integer|null: false|
+|category|references|null: false, foreign_key: true|
+|brand|string||
+|shipping_fee|integer|null: false|
 |condition|integer|null: false|
 |shipping_from|integer|null: false|
 |preparation_day|integer|null: false|
 |user|references|null: false, foreign_key: true|
-<!-- active_hashを使用するものはreference型ではなくintegerでforeign_keyも使用しない（レビューにて確認） -->
+<!-- active_hashを使用するものはreference型ではなくintegerでforeign_keyも使用しない（レビューにて確認済） -->
+
 ### Association
 
 - belongs_to :brand
 - belongs_to :user
-- belongs_to_active_hash :category
-- belongs_to_active_hash :shippingfee
+- belongs_to :category
+- belongs_to_active_hash :shipping_fee
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :shipping_from
 - belongs_to_active_hash :preparation_day
 - has_one :order
 - has_many :comments, dependent :destroy
 - has_many :item_images, dependent :destroy
+
+
+## categories table
+|Column|Type|Options|
+|name|string|null: false|
+|ancestry|string||
+
+### Association
+ - has_many :items
 
 
 ## brands table
