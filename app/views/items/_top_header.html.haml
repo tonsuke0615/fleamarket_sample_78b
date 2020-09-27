@@ -1,0 +1,25 @@
+.Topblock
+  .Header
+    .Header__box
+      .Header__box__main
+        .Header__box__main__icon
+          =link_to root_path do
+            = image_tag 'logo.png', height: '41', width: '140', class: 'title'
+        .Header__box__main__searchbox
+          .Header__box__main__searchbox__inputbox
+            %input{type:'searchinput',class:'input_box__text',placeholder:'キーワードから探す'}
+            %label{class: 'inputbox__icon'}
+              = link_to (image_tag 'icon-search1.png', class: 'icon__search'),'#'
+      .Header__box__action
+        %ul.Header__box__action__lists
+          %li.Header__box__action__lists__category
+            = image_tag 'icon_category.png', height: '12.5', width: '15' 
+            カテゴリー
+          %li.Header__box__action__lists__brand
+            = image_tag 'icon_brand.png', height: '12.5', width: '15'
+            ブランド
+        %ul.Header__box__action__user
+          %li.Header__box__action__user__login
+          = link_to 'ログイン', user_session_path, class: 'login'
+          %li.Header__box__action__user__new
+          = link_to '新規会員登録', new_user_registration_path, class: 'new'

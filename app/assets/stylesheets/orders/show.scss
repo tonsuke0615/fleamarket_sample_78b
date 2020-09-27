@@ -1,0 +1,111 @@
+.purchase-check__top{
+  background: lightgray;
+  height: 100px;
+}
+
+.purchase-check__main{
+  width: 100vw;
+  &__taitle{
+    // background: yellowgreen;
+    // border-bottom: 1px solid coral;
+    font-size: 30px;
+    margin: 40px 0 20px 0;
+    text-align: center;
+  }
+  &__category{
+    // background: lightcoral;
+    margin: 10px auto;
+    font-size: 25px;
+    text-align: center;
+    width: 30vw;
+    &__image{
+      // background: cornflowerblue;
+      margin: 20px auto 0 auto;
+      // position: relative;
+    }
+    &__commodity-price{
+      // background: darkgreen;
+      color: gray;
+      display: flex;
+      justify-content: space-between;
+      border-top: solid 1px lightgray;
+      padding-top: 20px;
+      &__category{
+        font-size: 15px;
+        // font-weight: bold;
+      }
+      &__value{
+        font-size: 15px;
+        color: black;
+        font-weight: bold;
+      }
+    }
+    &__shippingfee{
+      // background: orange;
+      display: flex;
+      justify-content: space-between;
+      color: gray;
+      &__category{
+        font-size: 15px;
+      }
+      &__value{
+        font-size: 15px;
+      }
+    }
+    &__payment{
+      // background: magenta;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-color: #3CCACE;
+      border: thin;
+      color: gray;
+      &__category{
+        font-size: 15px;
+        // font-weight: bold;
+      }
+      &__value{
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+        text-align: center;
+      }
+    }
+    &__payment-method{
+      // background: blue;
+      display: flex;
+      justify-content: space-between;
+      color: gray;
+      &__category{
+        font-size: 15px;
+      }
+      &__value{
+        font-size: 15px;
+      }
+    }
+    &__confirm-icon{
+      margin: 20px auto 50px auto;
+    }
+  }
+}
+
+.product-picture{
+  height: 250px;
+  width: 250px;
+  margin: 20px auto;
+  // position: relative;
+}
+
+.submit-icon{
+  background-color: #3CCACE;
+  color: white;
+  font-weight: bold;
+  border-color: #3CCACE;
+  border-style: solid;
+  width: 15vw;
+}
+
+.purchase-check__bottom{
+  background: lightgray;
+  height: 300px;
+}

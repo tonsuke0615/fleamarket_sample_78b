@@ -1,0 +1,34 @@
+.purchase-check
+  = render 'items/top_header'
+
+  .purchase-check__main
+    .purchase-check__main__taitle
+      = "購入確認"
+    .purchase-check__main__category
+      .purchase-check__main__category__image
+        = image_tag 'pict-reason-02.jpg', class: 'product-picture'
+      .purchase-check__main__category__commodity-price
+        .purchase-check__main__category__commodity-price__category
+          = "商品代金（送料込み）"
+        .purchase-check__main__category__commodity-price__value
+          = "¥5,000"
+      .purchase-check__main__category__shippingfee
+        .purchase-check__main__category__shippingfee__category
+          = "決済手数料"
+        .purchase-check__main__category__shippingfee__value
+          = "¥100"
+      .purchase-check__main__category__payment
+        .purchase-check__main__category__payment__category
+          = "支払金額"
+        .purchase-check__main__category__payment__value
+          = "¥5,100"
+      .purchase-check__main__category__payment-method
+        .purchase-check__main__category__payment-method__category
+          = "支払方法"
+        .purchase-check__main__category__payment-method__value
+          = "コンビニ/ATM払い"
+      .purchase-check__main__category__confirm-icon
+        = form_with url: '#' do |f|
+          = f.submit "購入する", class: 'submit-icon'
+  .purchase-check__bottom
+    = render 'items/bottom_footer'
