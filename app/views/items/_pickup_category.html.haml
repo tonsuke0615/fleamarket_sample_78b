@@ -6,7 +6,7 @@
     = link_to '新規投稿商品', '#' , class: 'subtitle'
     .PickupContainer__box__lists
       .PickupContainer__box__lists__list
-        = link_to (image_tag 'pic.2018.halloween', class:'image_list', height:'170'),'#'
+        = link_to image_tag asset_path ('pic.2018.halloween') 
         .PickupContainer__box__lists__list__contents
           .PickupContainer__box__lists__list__contents--name
             名前
