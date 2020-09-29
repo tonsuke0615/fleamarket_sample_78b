@@ -4,7 +4,7 @@
       .Header__box__main
         .Header__box__main__icon
           =link_to root_path do
-            = image_tag 'logo.png', height: '41', width: '140', class: 'title'
+            = image_tag asset_path ('logo.png'), height: '41', width: '140', :class => 'title'
         .Header__box__main__searchbox
           .Header__box__main__searchbox__inputbox
             %input{type:'searchinput',class:'input_box__text',placeholder:'キーワードから探す'}
