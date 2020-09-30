@@ -153,6 +153,10 @@
 - belongs_to :item
 
 
+## ancestryを用いたカテゴリテーブル
+１階層
+レディース、メンズ、美容、キッズ/ベビー、ホビー/エンタメ、楽器、チケット、インテリア/日用品、家電、ハンドメイド、食品/飲料、スポーツ_アウトドア、
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
