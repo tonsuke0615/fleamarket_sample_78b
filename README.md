@@ -81,7 +81,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|detail|text||
+|detail|text|null: false|
 |price|integer|null: false|
 |category|references|null: false, foreign_key: true|
 |brand|string||
@@ -93,8 +93,8 @@
 <!-- active_hashを使用するものはreference型ではなくintegerでforeign_keyも使用しない（レビューにて確認済） -->
 
 ### Association
-
-- belongs_to :brand
+<!-- ブランドは任意記載なので紐づかないかもしれない-->
+<!-- - belongs_to :brand -->
 - belongs_to :user
 - belongs_to :category
 - belongs_to_active_hash :shipping_fee
@@ -113,6 +113,7 @@
 
 ### Association
  - has_many :items
+ - has_ancestry
 
 
 ## brands table
