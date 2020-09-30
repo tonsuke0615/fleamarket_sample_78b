@@ -1,0 +1,112 @@
+-# ルーティングのroot item#newを最後に戻すこと
+.Wrapper
+.Top
+  =render "top_header"
+
+.MainField
+  .Contents
+    = form_with model: @item do |f|
+      .ItemInfo
+        .Contents__message
+          出品情報入力
+      .ItemInfo
+        .ItemInfo__text
+          商品画像
+        .ItemInfo__text--require
+          ※必須
+        .ImageField
+          -# 実際には複数枚投稿を別モデルに保存する記述で記載
+          = f.fields_for :item_images do |i|
+            .ImageField__form
+              = f.label :image do
+                = icon('fas', 'camera', class: "ImageField__form--icon")
+                = f.file_field :image, class: "ImageField__form--uploader"
+                -# 実際に使うコード　= i.file_field :src,class: "ImageField__uploader"
+            .ImageField__form
+              = f.label :image do
+                = icon('fas', 'camera', class: "ImageField__form--icon")
+                = f.file_field :image, class: "ImageField__form--uploader"
+            .ImageField__form
+              = f.label :image do
+                = icon('fas', 'camera', class: "ImageField__form--icon")
+                = f.file_field :image, class: "ImageField__form--uploader"
+            .ImageField__form
+              = f.label :image do
+                = icon('fas', 'camera', class: "ImageField__form--icon")
+                = f.file_field :image, class: "ImageField__form--uploader"
+      .ItemInfo  
+        .ItemInfo__text
+          商品名
+        .ItemInfo__text--require
+          ※必須
+        .ItemInfo__name--form
+          = f.text_field :name, placeholder: "(例)【新品】Adidas　Tシャツ", class: "formSize" 
+      .ItemInfo
+        .ItemInfo__text
+          商品説明（1000文字以内）
+        .ItemInfo__text--require
+          ※必須
+        .ItemInfo__detail--form
+          = f.text_area :detail, maxlength: 1000, placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例：昨年購入しましたが、似たようなものを持っていたので、着用していません。", class: "formSize__textarea"
+      .ItemInfo
+        .ItemInfo__text
+          カテゴリ
+        .ItemInfo__text--require
+          ※必須
+        .ItemInfo__category--form
+          = f.text_field :name, placeholder: "実際にはカテゴリをプルダウン", class: "formSize"
+        -#   = f.collection_select :category_id, @categories, :id, :name) {prompt: "カテゴリを選択してください"}
+        -# .ItemInfo__category--form
+        -#   = f.collection_select :category_id, @categories, :id, :name) {prompt: "カテゴリを選択してください"}
+        -# .ItemInfo__category--form
+        -#   = f.collection_select :category_id, @categories, :id, :name) {prompt: "カテゴリを選択してください"}
+      .ItemInfo
+        .ItemInfo__text
+          ブランド（任意）
+        .ItemInfo__brand--form
+          = f.text_field :name, placeholder: "(例)シャネル", class: "formSize"
+      .ItemInfo
+        .ItemInfo__text
+          商品の状態
+        .ItemInfo__text--require
+          ※必須
+          -# 本来はactive_hashを使用しデータを取得。以下同じ。
+        .ItemInfo__condition--form
+        = f.select :condition_id, [ ["新品未使用", 1], ["未使用に近い", 2], ["目立った汚れや傷なし",3], ["やや傷や汚れあり",4], ["傷や汚れあり",5], ["全体的に状態が悪い",6] ], {prompt: "選択してください"}, {class: "formSize"}
+      .ItemInfo
+        .ItemInfo__text
+          配送料負担
+        .ItemInfo__text--require
+          ※必須
+        .ItemInfo__shippingFee--form
+        = f.select :shippingFee_id, [ ["送料込み(出品者負担)", 1], ["着払い(購入者負担)", 2] ], {prompt: "選択してください"}, {class: "formSize"}
+      .ItemInfo
+        .ItemInfo__text
+          発送地
+        .ItemInfo__text--require
+          ※必須
+        .ItemInfo__shippingfrom--form
+        = f.select :shippingfrom_id, [ ["都道府県の一覧", 1], ], {prompt: "選択してください"}, {class: "formSize"}
+      .ItemInfo
+        .ItemInfo__text
+          出荷までの日数
+        .ItemInfo__text--require
+          ※必須
+        .ItemInfo__operationDay--form
+        = f.select :operationDay_id, [ ["１〜２日で発送", 1], ["２〜３日で発送", 2], ["４〜７日で発送", 3]], {prompt: "選択してください"}, {class: "formSize"}
+      .ItemInfo
+        .ItemInfo__text
+          価格(¥1〜9,999,999)
+        .ItemInfo__text--require
+          ※必須
+        .ItemInfo__price--form 
+        ¥
+        = f.number_field :price, placeholder: "0", min: 1, max: 9999999, class: "formSize__price"
+      .Button
+        = f.submit "出品する", class: "Button__submit"
+.Bottom
+  =render "bottom_footer"
+
+
+
+

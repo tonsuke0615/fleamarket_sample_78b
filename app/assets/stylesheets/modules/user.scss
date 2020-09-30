@@ -3,28 +3,143 @@
   background: lightblue;
 }
 
-.User-set__Field{
+.User-set__MainlField{
+  margin: 0 350px;
   display: flex;
-  display: block;
   justify-content: center;
   &__title{
-    display: block;
+    margin: 30px 0px 20px 0px;
+    font-size: 20px;
+    text-align: center;
+  }
+  &__user-form{
+    font-size: 15px;
+    line-height: 40px;
+    width: 600px;
+    margin: 0 auto;
+    &__nickname{
+      border-bottom: thin solid lightgray;
+    }
+    &__email{
+      border-bottom: thin solid lightgray;
+      width: 100%;
+    }
+    &__password{
+      border-bottom: thin solid lightgray;
+    }
+    &__name{
+      display: flex;
+      border-bottom: thin solid lightgray;
+      &__family{
+        margin: 0 5px;
+      }
+      &__first{
+        margin: 0 5px;
+      }
+      }
+    &__name_kana{
+      display: flex;
+      border-bottom: thin solid lightgray;
+      &__family{
+        margin: 0 5px;
+      }
+      &__first{
+        margin: 0 5px;
+      }
+      }
+    &__birth_date{
+      border-bottom: thin solid lightgray;
+    }
+    &__creditcard_id{
+      border-bottom: thin solid lightgray;
+    }
+  }
+
+  &__destination-title{
+    margin: 30px 0px 20px 0px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  &__destination-form{
+    line-height: 40px;
+    font-size: 15px;
+    &__name{
+      display: flex;
+      border-bottom: thin solid lightgray;
+      &__family{
+        margin: 0 5px;
+      }
+      &__first{
+        margin: 0 5px;
+      }
+    }
+    &__name_kana{
+      display: flex;
+      border-bottom: thin solid lightgray;
+      &__family{
+        margin: 0 5px;
+      }
+      &__first{
+        margin: 0 5px;
+      }
+    }
+    &__post_code{
+      border-bottom: thin solid lightgray;
+    }
+    &__prefecture{
+      border-bottom: thin solid lightgray;
+    }
+    &__city{
+      border-bottom: thin solid lightgray;
+    }
+    &__address{
+      border-bottom: thin solid lightgray;
+    }
+    &__building{
+      border-bottom: thin solid lightgray;
+    }
+    &__phone{
+      border-bottom: thin solid lightgray;
+    }
   }
 }
 
-.FormField{
-  width: 80%;
-  display: flex;
-  display: block;
-  justify-content: center;
-  &__name{
-    display: flex;
-    justify-content: space-around;
-  }
-  &__name-kana{
-    display: flex;
-    justify-content: space-around;
-  }
+.category{
+  text-align: left;
+  vertical-align: middle;
+  height: 40px;
+  display: inline-block;
+  width: 160px;
+}
+
+.required{
+  color: white;
+  background: coral;
+  text-align: center;
+  vertical-align: middle;
+  width: 40px;
+  font-size: 2px;
+  padding: 3px 5px;
+}
+
+.text_field{
+  border: solid thin #3CCACE;
+}
+
+.User-set__MainlField__Submit{
+  margin: 50px 0 70px 0;
+  text-align: center;
+}
+
+.Button_UserButton{
+  background: #3CCACE;
+  color: white;
+  font-weight: bold;
+  border: #3CCACE;
+  padding: 5px;
+  width: 180px;
+  line-height: 30px;
 }
 
 .User-set__botom{
