@@ -6,25 +6,19 @@
 .purchase-check__main{
   width: 100vw;
   &__taitle{
-    // background: yellowgreen;
-    // border-bottom: 1px solid coral;
     font-size: 30px;
     margin: 40px 0 20px 0;
     text-align: center;
   }
   &__category{
-    // background: lightcoral;
     margin: 10px auto;
     font-size: 25px;
     text-align: center;
     width: 30vw;
     &__image{
-      // background: cornflowerblue;
       margin: 20px auto 0 auto;
-      // position: relative;
     }
     &__commodity-price{
-      // background: darkgreen;
       color: gray;
       display: flex;
       justify-content: space-between;
@@ -32,7 +26,6 @@
       padding-top: 20px;
       &__category{
         font-size: 15px;
-        // font-weight: bold;
       }
       &__value{
         font-size: 15px;
@@ -41,7 +34,6 @@
       }
     }
     &__shippingfee{
-      // background: orange;
       display: flex;
       justify-content: space-between;
       color: gray;
@@ -53,7 +45,6 @@
       }
     }
     &__payment{
-      // background: magenta;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -62,7 +53,6 @@
       color: gray;
       &__category{
         font-size: 15px;
-        // font-weight: bold;
       }
       &__value{
         font-size: 18px;
@@ -93,7 +83,6 @@
   height: 250px;
   width: 250px;
   margin: 20px auto;
-  // position: relative;
 }
 
 .submit-icon{

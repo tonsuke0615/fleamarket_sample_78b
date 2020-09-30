@@ -1,4 +1,4 @@
-.purchase-check
+.purchase-check__header
   = render 'items/top_header'
 
   .purchase-check__main
@@ -6,7 +6,7 @@
       = "購入確認"
     .purchase-check__main__category
       .purchase-check__main__category__image
-        = image_tag 'pict-reason-02.jpg', class: 'product-picture'
+        %img{src: asset_path('pict-reason-02.jpg') , class: 'product-picture'}
       .purchase-check__main__category__commodity-price
         .purchase-check__main__category__commodity-price__category
           = "商品代金（送料込み）"
@@ -30,5 +30,6 @@
       .purchase-check__main__category__confirm-icon
         = form_with url: '#' do |f|
           = f.submit "購入する", class: 'submit-icon'
+  
   .purchase-check__bottom
     = render 'items/bottom_footer'
