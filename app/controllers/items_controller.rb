@@ -1,18 +1,32 @@
 class ItemsController < ApplicationController
+  before_action :set_parents, only: [:new, :create]
+
   def index
   end
 
   def new 
     @item = Item.new
-    # @item.item_images.new
-    @parents_category = Category.where(ancestry: nil) 
-    # @children = Category.find(params[:parent_id]).children
+    @item_image = ItemImage.new
   end
 
-  def search_children_category
-    @children_category = Category.find(params[:parent_id]).children
+  def create
   end
 
-  
+  def search
+    respond_to do |format|
+      format.html
+      format.json do
+        @childrens = Category.find(params[:parent_id]).children
+  end
+
+
+
+  def get_grandchildren_category
+    @grandchildren_category = Category.find(params[:child_id]).children
+  end
+
+  def set_parents
+    @parents = Category.where(ancestry: nil)
+  end
 
 end
