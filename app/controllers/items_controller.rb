@@ -17,12 +17,8 @@ class ItemsController < ApplicationController
       format.html
       format.json do
         @childrens = Category.find(params[:parent_id]).children
-  end
-
-
-
-  def get_grandchildren_category
-    @grandchildren_category = Category.find(params[:child_id]).children
+      end
+    end
   end
 
   def set_parents
