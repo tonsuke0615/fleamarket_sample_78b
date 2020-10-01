@@ -1,3 +1,4 @@
+window.addEventListener('load', function () {
 // 子レベルのselectタグを追加
 function add_childSelect_tag() {
   let child_select_form = `
@@ -41,4 +42,6 @@ $("#category_form").on("change", function() {
     });
   }
 });
+
 console.log("test3")
+})
