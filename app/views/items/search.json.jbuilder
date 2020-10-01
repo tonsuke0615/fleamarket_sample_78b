@@ -4,6 +4,6 @@ json.array! @childrens do |children|
 end
 
 json.array! @grandchildrens do |grandchildren|
-  json.id grandChildren.id
-  json.name grandChildren.name
+  json.id grandchildren.id
+  json.name grandchildren.name
 end
