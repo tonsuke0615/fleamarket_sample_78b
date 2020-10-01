@@ -16,7 +16,11 @@ class ItemsController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        @childrens = Category.find(params[:parent_id]).children
+        if params[:parent_id]
+          @childrens = Category.find(params[:parent_id]).children
+        elsif params[:children_id]
+          @grandchildrens = Category.find(params[:children_id]).children
+        end
       end
     end
   end
