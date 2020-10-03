@@ -1,6 +1,8 @@
 class Item < ApplicationRecord
   belongs_to :user
   belongs_to :category
+
+  # テーブル未作成のため下記コメントアウト中。実装で必要になったタイミングで外してください
   # belongs_to_active_hash :shipping_fee
   # belongs_to_active_hash :condition
   # belongs_to_active_hash :shipping_from
