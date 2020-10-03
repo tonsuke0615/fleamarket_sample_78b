@@ -21,18 +21,18 @@
                 = icon('fas', 'camera', class: "ImageField__form--icon")
                 = f.file_field :image, class: "ImageField__form--uploader"
                 -# 実際に使うコード　= i.file_field :src,class: "ImageField__uploader"
-            -# .ImageField__form
-            -#   = f.label :image do
-            -#     = icon('fas', 'camera', class: "ImageField__form--icon")
-            -#     = f.file_field :image, class: "ImageField__form--uploader"
-            -# .ImageField__form
-            -#   = f.label :image do
-            -#     = icon('fas', 'camera', class: "ImageField__form--icon")
-            -#     = f.file_field :image, class: "ImageField__form--uploader"
-            -# .ImageField__form
-            -#   = f.label :image do
-            -#     = icon('fas', 'camera', class: "ImageField__form--icon")
-            -#     = f.file_field :image, class: "ImageField__form--uploader"
+            .ImageField__form
+              = f.label :image do
+                = icon('fas', 'camera', class: "ImageField__form--icon")
+                = f.file_field :image, class: "ImageField__form--uploader"
+            .ImageField__form
+              = f.label :image do
+                = icon('fas', 'camera', class: "ImageField__form--icon")
+                = f.file_field :image, class: "ImageField__form--uploader"
+            .ImageField__form
+              = f.label :image do
+                = icon('fas', 'camera', class: "ImageField__form--icon")
+                = f.file_field :image, class: "ImageField__form--uploader"
       .ItemInfo  
         .ItemInfo__text
           商品名
