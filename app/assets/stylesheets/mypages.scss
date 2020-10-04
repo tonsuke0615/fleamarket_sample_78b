@@ -1,0 +1,138 @@
+.main {
+  height: 125rem;
+  margin: 4rem auto 0;
+  .mypage-container {
+    height: 62.2rem;
+    width: 70rem;
+    box-sizing: border-box;
+    float: right;
+    .mypage-header {
+      height: 20rem;
+      width: 70rem;
+      padding: 7.2rem 1.6rem 2.4rem;
+      box-sizing: border-box;
+      text-align: center;
+      background-image: image-url("pict-reason-03.jpg");
+      background-position: 50% 45%;
+      background-size: cover;
+      &__image {
+        height: 6rem;
+        width: 6rem;
+        background-image: image-url("pict-reason-03.jpg");
+        border-radius: 50%;
+        display: inline-block;
+        vertical-align: middle;
+        background-size: cover;
+      }
+      &__name {
+        color: #fff;
+        font-size: 1.4rem;
+        text-shadow: 0.1rem 0.2rem 0.3rem #333;
+        font-weight: bold;
+        margin-top: 0.8rem;
+      }
+      &__evaluation {
+        color: #fff;
+        font-size: 1.4rem;
+        text-shadow: 0.1rem 0.2rem 0.3rem #333;
+        display: inline-block;
+      }
+      &__evaluation-num {
+        @extend .mypage-header__name;
+        margin-left: 0.8rem;
+        display: inline-block;
+      }
+      &__exhibit {
+        @extend .mypage-header__evaluation;
+        margin-left: 0.8rem;
+      }
+      &__exhibit-num {
+        @extend .mypage-header__evaluation-num;
+      }
+    }
+  }
+
+  .purchased-item {
+    height: 7.2rem;
+    background-color: #fff;
+    margin-top: 4rem;
+    padding: 0 1.6rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 7.2rem;
+  }
+  .list-line {
+    list-style: none;
+    font-size: 0;
+    display: flex;
+    width: 100%;
+    height: 0.2rem;
+    box-sizing: border-box;
+    list-style: none;
+    .active-line {
+      height: 0.2rem;
+      width: 50%;
+      background-color: darkseagreen;
+    }
+    .past-line {
+      @extend .active-line;
+      background-color: #eee;
+    }
+  }
+  .list {
+    height: 7.2rem;
+    width: 100%;
+    font-size: 0;
+    display: flex;
+    box-sizing: border-box;
+    list-style: none;
+    .active {
+      height: 7.2rem;
+      width: 50%;
+      font-size: 1.8rem;
+      font-weight: bold;
+      background-color: #fff;
+      text-align: center;
+      line-height: 7.2rem;
+      list-style: none;
+    }
+    .past {
+      height: 7.2rem;
+      width: 50%;
+      font-size: 1.8rem;
+      font-weight: bold;
+      background-color: #eee;
+      text-align: center;
+      line-height: 7.2rem;
+    }
+  }
+  .report-areas {
+    height: 23.5rem;
+    width: 70rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #808080;
+    background-color: #fff;
+    background-image: image-url("logo_gray");
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    text-align: center;
+    line-height: 39rem;
+    list-style: none;
+  }
+  .report-area-todo {
+    list-style: none;
+    display: none;
+  }
+  .report-areas .report-areas-info {
+    display: block;
+  }
+  .gray-logo {
+    height: 10rem;
+    width: 10rem;
+  }
+  .report-area__sentence {
+    margin-top: 1rem;
+  }
+}

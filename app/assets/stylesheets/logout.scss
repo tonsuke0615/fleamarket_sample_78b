@@ -1,0 +1,37 @@
+body {
+  background-color: #f5f5f5;
+}
+
+.header {
+  width: 100%;
+  background-color: red;
+}
+
+.contents {
+  overflow: auto;
+  .logout {
+    max-height: 100%;
+    max-width: 100%;
+    &__form {
+      max-width: 320px;
+      padding: 30px;
+      margin: auto;
+      &--button {
+        cursor: pointer;
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+        height: 50px;
+        line-height: 48px;
+        font-size: 14px;
+        background: lightgreen;
+        border: 1px solid black;
+        color: #fff;
+        border-radius: 4px;
+      }
+      }  
+  }
+    .footer {
+      background-color: blue;
+    }
+} 

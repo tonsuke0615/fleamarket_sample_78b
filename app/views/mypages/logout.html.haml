@@ -1,0 +1,9 @@
+= render 'items/top_header'
+
+%body
+  .contents
+    .logout
+      .logout__form
+        = button_to "ログアウト", destroy_user_session_path, {method: :delete, class: "logout__form--button"}
+
+= render 'items/bottom_footer'
