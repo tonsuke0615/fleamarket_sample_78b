@@ -1,0 +1,157 @@
+.hierarchy{
+  height: 55px;
+  width: 100%;
+  margin: 0;
+  padding: 0 60px;
+  border-top: solid 1px #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  position: relative;
+  &__main{
+    padding: 17px 0 16px;
+    margin: 0 autp;
+    font-size: 14px;
+    width: 100%;
+    max-width: 1040px;
+    text-align: left;
+    vertical-align: middle;
+    display: flex;
+    list-style: none;
+    .hierarchy-btn{
+      text-decoration: none;
+      cursor: pointer;
+      color: #333;
+    }
+    &__down-hierarchy{
+      margin: auto 10px;
+    }
+  }
+}
+
+.Show-main{
+  background: #f8f8f8;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  .Main-block{
+    // display: flex;
+    // justify-content: center;
+    width: 700px;
+    &__Item-ditail{
+      background: #fff;
+      width: 100%;
+      padding: 24px 40px 0px;
+      &__Name{
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      &__PictureBox{
+        width: 100%;
+        padding: 0 30px;
+        &__Main{
+          margin: 16px auto 0;
+          .MainPicture{
+            margin: 0 auto;
+            object-fit: cover;
+            height: 346px;
+            width: 560px;
+          }
+        }
+        &__Sub{
+          display: flex;
+          justify-content: center;
+          margin-top: 10px;
+          &__1{
+            margin-right: 10px;
+          }
+          &__2{
+          }
+          .SubPicture{
+            height: 87px;
+            width: 140px;
+          }
+        }
+      }
+      &__PriceBox{
+        margin-top: 24px;
+        padding-bottom: 24px;
+        text-align: center;
+        &__Price{
+          font-size: 46px;
+          font-weight: bold;
+        }
+        &__Ditail{
+          font-size: 16px;
+        }
+      }
+    }
+    &__Item-coment{
+      background: white;
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 0 40px 24px 40px;
+      &__ItemName{
+        line-height: 1.5;
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+      &__Table{
+        width: 100%;
+        height: 375px;
+        border-collapse: collapse;
+        border: 1px solid #f8f8f8;
+        margin-bottom: 20px;
+        &__Body{
+          display: flex;
+          &__Category{
+            width: 20%;
+            background-color: #eee;
+            font-weight: 400;
+            padding: 15px 8px;
+            border: 1px solid #dedede;
+            font-size: 14px;
+            text-align: center;
+          }
+          &__Coment{
+            width: 61%;
+            padding: 15px 15px;
+            border: 1px solid #dedede;
+            font-size: 14px;
+          }
+        }
+      }
+
+    }
+    &__Items-link{
+      // background: lightblue;
+      height: 24px;
+      width: 100%;
+      &__Block{
+        display: flex;
+        justify-content: space-between;
+        .Item-btn{
+          display: flex;
+          cursor: pointer;
+          text-decoration: none;
+          color: #3CCACE;
+        }
+      }
+    }
+    &__Related-items{
+      // background: yellowgreen;
+      width: 100%;
+      .Related-btn{
+        // height: 33px;
+        // max-width: 24px 0 8px;
+        display: block;
+        margin: 24px 0 32px;
+        color: #3CCACE;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 22px;
+        position: relative;
+      }
+    }
+  }
+}

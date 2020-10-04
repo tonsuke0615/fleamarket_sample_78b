@@ -1,3 +1,79 @@
 .Header
-  = render 'items/top_header'
+  = render 'top_header'
 
+.Category-hierarchy
+  = render 'top-hierarchy'
+
+.Show-main
+  .Main-block
+    .Main-block__Item-ditail
+      .Main-block__Item-ditail__Name
+        eee
+      %ul.Main-block__Item-ditail__PictureBox
+        %li.Main-block__Item-ditail__PictureBox__Main
+          = image_tag 'pict-reason-02.jpg', class: 'MainPicture'
+        %ul.Main-block__Item-ditail__PictureBox__Sub
+          %li.Main-block__Item-ditail__PictureBox__Sub__1
+            %img{src: asset_path('pict-reason-03.jpg') , class: 'SubPicture'}
+          %li.Main-block__Item-ditail__PictureBox__Sub__2
+            %img{src: asset_path('pict-reason-01.jpg') , class: 'SubPicture'}
+      .Main-block__Item-ditail__PriceBox
+        .Main-block__Item-ditail__PriceBox__Price
+          ¥10000
+        .Main-block__Item-ditail__PriceBox__Ditail
+          (税込) 送料込み
+    .Main-block__Item-coment
+      .Main-block__Item-coment__ItemName
+        eee
+      .Main-block__Item-coment__Table
+        .Main-block__Item-coment__Table__Body
+          .Main-block__Item-coment__Table__Body__Category
+            出品者
+          .Main-block__Item-coment__Table__Body__Coment
+            ss
+        .Main-block__Item-coment__Table__Body
+          .Main-block__Item-coment__Table__Body__Category
+            カテゴリー
+          .Main-block__Item-coment__Table__Body__Coment
+            ss
+        .Main-block__Item-coment__Table__Body
+          .Main-block__Item-coment__Table__Body__Category
+            ブランド
+          .Main-block__Item-coment__Table__Body__Coment
+            ss
+        .Main-block__Item-coment__Table__Body
+          .Main-block__Item-coment__Table__Body__Category
+            商品のサイズ
+          .Main-block__Item-coment__Table__Body__Coment
+            ss
+    .Main-block__Items-link
+      %ul.Main-block__Items-link__Block
+        %li.Main-block__Items-link__Block__FrontItem
+          = link_to '< 前の商品', "#", class: 'Item-btn'
+        %li.Main-block__Items-link__Block__BackItem
+          = link_to '後ろの商品 >', "#", class: 'Item-btn'
+      -# %ul.Main-block__Items-link__RigthBlock
+      -#   %li.hierarchy__main__Furima
+      -#     = link_to 'ベビー・キッズ', "#", class: 'hierarchy-btn'
+      -#   %li.hierarchy__main__down-hierarchy
+      -#     >
+    .Main-block__Related-items
+      = link_to 'ベビー・キッズをもっと見る', "#", class: 'Related-btn'
+      .PickupContainer__box__lists__list
+        = link_to (image_tag 'pict-reason-02.jpg', class:'image_list', height:'150', width: '220'),'#'
+        .PickupContainer__box__lists__list__contents
+          .PickupContainer__box__lists__list__contents--name
+            WWW
+          .PickupContainer__box__lists__list__contents--price
+            10000円
+            .PickupContainer__box__lists__list__contents--price--taxinclude
+              （税込）
+
+.bottom_block
+  = render 'bottom_block'
+
+.bottom_footer
+  = render 'bottom_footer'
+
+.display
+  = render "display_btn"
