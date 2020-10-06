@@ -14,9 +14,9 @@
           = image_tag 'pict-reason-02.jpg', class: 'MainPicture'
         %ul.Main-block__Item-ditail__PictureBox__Sub
           %li.Main-block__Item-ditail__PictureBox__Sub__1
-            %img{src: asset_path('pict-reason-03.jpg') , class: 'SubPicture'}
+            = image_tag 'pict-reason-03.jpg', class: 'SubPicture'
           %li.Main-block__Item-ditail__PictureBox__Sub__2
-            %img{src: asset_path('pict-reason-01.jpg') , class: 'SubPicture'}
+            = image_tag 'pict-reason-01.jpg', class: 'SubPicture'
       .Main-block__Item-ditail__PriceBox
         .Main-block__Item-ditail__PriceBox__Price
           ¥10000
@@ -34,18 +34,49 @@
         .Main-block__Item-coment__Table__Body
           .Main-block__Item-coment__Table__Body__Category
             カテゴリー
-          .Main-block__Item-coment__Table__Body__Coment
-            ss
+          %ul.Main-block__Item-coment__Table__Body__Coment
+            %li.CategoryName__1
+              = link_to "ベビー・キッズ", "#", class: 'CategoryName'
+            %li.CategoryName__2
+              = link_to "ベビー服(男の子用) ~95cm", "#", class: 'CategoryName'
+            %li.CategoryName__3
+              = link_to "アウター", "#", class: 'CategoryName'
         .Main-block__Item-coment__Table__Body
           .Main-block__Item-coment__Table__Body__Category
             ブランド
           .Main-block__Item-coment__Table__Body__Coment
-            ss
+            
         .Main-block__Item-coment__Table__Body
           .Main-block__Item-coment__Table__Body__Category
             商品のサイズ
           .Main-block__Item-coment__Table__Body__Coment
-            ss
+            
+        .Main-block__Item-coment__Table__Body
+          .Main-block__Item-coment__Table__Body__Category
+            商品の状態
+          .Main-block__Item-coment__Table__Body__Coment
+            新品/未使用
+        .Main-block__Item-coment__Table__Body
+          .Main-block__Item-coment__Table__Body__Category
+            配送料の負担
+          .Main-block__Item-coment__Table__Body__Coment
+            送料込み（発走者負担）
+        .Main-block__Item-coment__Table__Body
+          .Main-block__Item-coment__Table__Body__Category
+            発送元の地域
+          .Main-block__Item-coment__Table__Body__Coment
+            = link_to "北海道", "#", class: 'CategoryName'
+        .Main-block__Item-coment__Table__Body
+          .Main-block__Item-coment__Table__Body__Category
+            発送日の目安
+          .Main-block__Item-coment__Table__Body__Coment
+            1~2日で発送
+      .Main-block__Item-coment__Icon
+        .Main-block__Item-coment__Icon__Report
+          .Main-block__Item-coment__Icon__Report__Icon
+            = icon('fa', 'flag', class:"Flag-Icon")
+            = "不適切な商品の通報"
+          
     .Main-block__Items-link
       %ul.Main-block__Items-link__Block
         %li.Main-block__Items-link__Block__FrontItem

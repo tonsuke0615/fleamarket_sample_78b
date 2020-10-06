@@ -98,7 +98,6 @@
       }
       &__Table{
         width: 100%;
-        height: 375px;
         border-collapse: collapse;
         border: 1px solid #f8f8f8;
         margin-bottom: 20px;
@@ -114,14 +113,35 @@
             text-align: center;
           }
           &__Coment{
-            width: 61%;
+            width: 80%;
             padding: 15px 15px;
             border: 1px solid #dedede;
             font-size: 14px;
+            .CategoryName{
+              text-decoration: none;
+              cursor: pointer;
+              color: #3CCACE;
+            }
           }
         }
       }
-
+      &__Icon{
+        display: flex;
+        justify-content: flex-end;
+        &__Report{
+          width: 167px;
+          cursor: pointer;
+          font-size: 14px;
+          padding: 6px 10px;
+          margin-top: 10px;
+          border: solid 1px black;
+          border-radius: 4px;
+          display: flex;
+          &__Icon{
+          }
+        }
+      }
+      
     }
     &__Items-link{
       // background: lightblue;
