@@ -1,0 +1,34 @@
+= render 'items/top_header'
+
+.main
+  .mypage-container
+    .mypage-header
+      .mypage-header__image
+      .mypage-header__name
+        user1
+      .mypage-header__evaluation
+        評価
+      .mypage-header__evaluation-num
+        0
+      .mypage-header__exhibit
+        出品数
+      .mypage-header__exhibit-num
+        0
+      .purchased-item
+        購入した商品
+      %ul.list-line
+        %li.active-line
+        %li.past-line
+      %ul.list
+        %li.active
+          取引中
+        %li.past
+          過去の取引
+      %ul.report-areas
+        %li.report-area-info
+          取引中の商品はありません
+        %li.report-area-todo
+          過去の取引リスト
+
+  = render "sidebar"
+= render 'items/bottom_footer'

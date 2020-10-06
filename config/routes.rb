@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
-  resources :items, only: [:index, :new, :show]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :items, only: [:index, :new, :create, :show] do
+    collection do
+      get :search
+    end
+  end
   resources :orders
+  get 'mypage/index', to: 'mypages#index'
+  get 'mypage/logout', to: 'mypages#logout'
+  get 'mypage/creditcard', to: 'mypages#creditcard'
+  get 'mypage/add-creditcard', to: 'mypages#add-creditcard'
 end
