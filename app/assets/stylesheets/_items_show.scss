@@ -34,8 +34,6 @@
   display: flex;
   justify-content: center;
   .Main-block{
-    // display: flex;
-    // justify-content: center;
     width: 700px;
     &__Item-ditail{
       background: #fff;
@@ -144,7 +142,6 @@
       
     }
     &__Items-link{
-      // background: lightblue;
       height: 24px;
       width: 100%;
       &__Block{
@@ -159,11 +156,8 @@
       }
     }
     &__Related-items{
-      // background: yellowgreen;
       width: 100%;
       .Related-btn{
-        // height: 33px;
-        // max-width: 24px 0 8px;
         display: block;
         margin: 24px 0 32px;
         color: #3CCACE;
