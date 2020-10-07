@@ -80,7 +80,7 @@
         .ItemInfo__text--require
           ※必須
         .ItemInfo__shippingfrom--form
-        = f.select :shippingfrom_id, [ ["都道府県の一覧", 1], ], {prompt: "選択してください"}, {class: "formSize"}
+        = f.collection_select :shippingFrom_id, ShippingFrom.all, :id, :name, {prompt: "選択してください"}, {class: "formSize", id: "shippingFrom_id"}
       .ItemInfo
         .ItemInfo__text
           出荷までの日数

@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :condition
   belongs_to_active_hash :shippingFee
-  # belongs_to_active_hash :shippingFrom
+  belongs_to_active_hash :shippingFrom
   # belongs_to_active_hash :preparationDay
   # has_one :order
   # has_many :item_images, dependent: :destroy
