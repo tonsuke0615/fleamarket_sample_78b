@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :condition
   belongs_to_active_hash :shippingFee
   belongs_to_active_hash :shippingFrom
-  # belongs_to_active_hash :preparationDay
+  belongs_to_active_hash :preparationDay
   # has_one :order
   # has_many :item_images, dependent: :destroy
   # has_many :comments, dependent: :destroy

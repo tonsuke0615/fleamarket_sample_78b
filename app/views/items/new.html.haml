@@ -87,7 +87,7 @@
         .ItemInfo__text--require
           ※必須
         .ItemInfo__operationDay--form
-        = f.select :operationDay_id, [ ["１〜２日で発送", 1], ["２〜３日で発送", 2], ["４〜７日で発送", 3]], {prompt: "選択してください"}, {class: "formSize"}
+        = f.collection_select :preparationDay_id, PreparationDay.all, :id, :status, {prompt: "選択してください"}, {class: "formSize", id: "preparationDay_id"}
       .ItemInfo
         .ItemInfo__text
           価格(¥1〜9,999,999)
