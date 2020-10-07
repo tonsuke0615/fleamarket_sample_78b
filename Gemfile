@@ -85,3 +85,5 @@ gem 'gretel'
 gem 'jquery-rails'
 
 gem 'ancestry'
+
+gem 'fog-aws'
