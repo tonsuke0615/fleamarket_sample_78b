@@ -85,10 +85,10 @@
 |price|integer|null: false|
 |category|references|null: false, foreign_key: true|
 |brand|string||
-|shipping_fee|integer|null: false|
+|shippingFee|integer|null: false|
 |condition|integer|null: false|
-|shipping_from|integer|null: false|
-|preparation_day|integer|null: false|
+|shippingFrom|integer|null: false|
+|preparationDay|integer|null: false|
 |user|references|null: false, foreign_key: true|
 <!-- active_hashを使用するものはreference型ではなくintegerでforeign_keyも使用しない（レビューにて確認済） -->
 
@@ -97,10 +97,10 @@
 <!-- - belongs_to :brand -->
 - belongs_to :user
 - belongs_to :category
-- belongs_to_active_hash :shipping_fee
+- belongs_to_active_hash :shippingFee
 - belongs_to_active_hash :condition
-- belongs_to_active_hash :shipping_from
-- belongs_to_active_hash :preparation_day
+- belongs_to_active_hash :shippingFrom
+- belongs_to_active_hash :preparationDay
 - has_one :order
 - has_many :comments, dependent :destroy
 - has_many :item_images, dependent :destroy
@@ -152,10 +152,6 @@
 - belongs_to :user
 - belongs_to :item
 
-
-## ancestryを用いたカテゴリテーブル
-１階層
-レディース、メンズ、美容、キッズ/ベビー、ホビー/エンタメ、楽器、チケット、インテリア/日用品、家電、ハンドメイド、食品/飲料、スポーツ_アウトドア、
 
 
 This README would normally document whatever steps are necessary to get the

@@ -62,24 +62,25 @@
   &__price {
     display: flex;
     display: block;
+    }
   }
-}
 
 .formSize {
-  width: 100%;
+  width: 99%;
   height: 30px;
   border: 0.5px solid #3CCACE;
   margin-top: 10px;
   &__textarea {
-    width: 100%;
+    width: 99%;
     height: 150px;
     border: 0.5px solid #3CCACE;
     margin-top: 10px;
   }
   &__price {
-    width: 97%;
+    width: 96%;
     height: 30px;
     border: 0.5px solid #3CCACE;
+    justify-content: right;
     margin-top: 10px;
     text-align: right;
   }
