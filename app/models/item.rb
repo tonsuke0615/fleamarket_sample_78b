@@ -4,7 +4,8 @@ class Item < ApplicationRecord
 
   # テーブル未作成のため下記コメントアウト中。実装で必要になったタイミングで外してください
   # belongs_to_active_hash :shipping_fee
-  # belongs_to_active_hash :condition
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :condition
   # belongs_to_active_hash :shipping_from
   # belongs_to_active_hash :preparation_day
   # has_one :order
