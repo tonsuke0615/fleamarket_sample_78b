@@ -73,7 +73,7 @@
         .ItemInfo__text--require
           ※必須
         .ItemInfo__shippingFee--form
-        = f.select :shippingFee_id, [ ["送料込み", 1], ["着払い", 2] ], {prompt: "選択してください"}, {class: "formSize"}
+        = f.collection_select :shippingFee_id, ShippingFee.all, :id, :status, {prompt: "選択してください"}, {class: "formSize", id: "shippingFee_id"}
       .ItemInfo
         .ItemInfo__text
           発送地
