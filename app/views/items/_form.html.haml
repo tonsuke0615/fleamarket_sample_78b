@@ -11,22 +11,21 @@
       .ImageField
         = f.fields_for :item_images do |i|
           .ImageField__form
-            = f.label :image do
+            = f.label :src do
               = icon('fas', 'camera', class: "ImageField__form--icon")
-              = f.file_field :image, class: "ImageField__form--uploader"
-              -# 実際に使うコード　= i.file_field :src,class: "ImageField__uploader"
+              = f.file_field :src, class: "ImageField__form--uploader"
           .ImageField__form
-            = f.label :image do
+            = f.label :src do
               = icon('fas', 'camera', class: "ImageField__form--icon")
-              = f.file_field :image, class: "ImageField__form--uploader"
+              = f.file_field :src, class: "ImageField__form--uploader"
           .ImageField__form
-            = f.label :image do
+            = f.label :src do
               = icon('fas', 'camera', class: "ImageField__form--icon")
-              = f.file_field :image, class: "ImageField__form--uploader"
+              = f.file_field :src, class: "ImageField__form--uploader"
           .ImageField__form
-            = f.label :image do
+            = f.label :src do
               = icon('fas', 'camera', class: "ImageField__form--icon")
-              = f.file_field :image, class: "ImageField__form--uploader"
+              = f.file_field :src, class: "ImageField__form--uploader"
     .ItemInfo  
       .ItemInfo__text
         商品名

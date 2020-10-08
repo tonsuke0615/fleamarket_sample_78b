@@ -22,16 +22,16 @@
   align-items: center;
   &__form {
       height: 80%;
-      width: 100%;
+      width: 25%;
       border: 1px dotted #3CCACE;
       text-align: center;
     &--icon {
       font-size: 50px;
-      color: black;
+      color: lightgray;
       margin-top: 40px;
     }
     &--uploader {
-      // display: none;
+      display: none;
     }
     &--message {
       display: block;
