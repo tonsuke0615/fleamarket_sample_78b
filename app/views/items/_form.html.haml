@@ -1,5 +1,5 @@
 .Contents
-  = form_with model: @item do |f|
+  = form_with model: @item, local: true do |f|
     .ItemInfo
       .Contents__message
         出品情報入
@@ -39,7 +39,7 @@
       .ItemInfo__text
         ブランド（任意）
       .ItemInfo__brand--form
-        = f.text_field :name, placeholder: "(例)シャネル", class: "formSize", id: 'item_brand'
+        = f.text_field :brand, placeholder: "(例)シャネル", class: "formSize", id: 'item_brand'
     .ItemInfo
       .ItemInfo__text
         商品の状態
