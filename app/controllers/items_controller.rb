@@ -49,7 +49,7 @@ private
   end
 
   def item_params
-    params.require(:item).permit(:name, :price, :)
+    params.require(:item).permit(:name, :price, :detail, :category_id, :condition , :shippingFee_id , :shippingFrom_id, :preparationDay_id , :price, item_images_attributes: [:src])
   end
 
 end
