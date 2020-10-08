@@ -1,15 +1,30 @@
 .Contents
-  = form_with model: @item, local: true do |f|
+  = form_with model: @item do |f|
     .ItemInfo
       .Contents__message
-        出品情報入
+        出品情報入力
     .ItemInfo
       .ItemInfo__text
         商品画像
       .ItemInfo__text--require
         ※必須
       .ImageField
-        = f.fields_for :item_images do |i|
+        = f.fields_for :item_images, local: true do |i|
+          .ImageField__form
+            = i.label :src do
+              = icon('fas', 'camera', class: "ImageField__form--icon")
+              = i.file_field :src, class: "ImageField__form--uploader"
+        = f.fields_for :item_images, local: true do |i|
+          .ImageField__form
+            = i.label :src do
+              = icon('fas', 'camera', class: "ImageField__form--icon")
+              = i.file_field :src, class: "ImageField__form--uploader"
+        = f.fields_for :item_images, local: true do |i|
+          .ImageField__form
+            = i.label :src do
+              = icon('fas', 'camera', class: "ImageField__form--icon")
+              = i.file_field :src, class: "ImageField__form--uploader"
+        = f.fields_for :item_images, local: true do |i|
           .ImageField__form
             = i.label :src do
               = icon('fas', 'camera', class: "ImageField__form--icon")
