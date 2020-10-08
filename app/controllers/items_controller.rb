@@ -2,10 +2,6 @@ class ItemsController < ApplicationController
   before_action :set_parents, only: [:new, :create]
 
   def index
-    @items = Item.all
-    @item_images = ItemImage.all
-    @new_post_categories = Item.order("id DESC").limit(5)
-    @item = Item.new
   end
 
   def new 
