@@ -116,16 +116,6 @@
  - has_ancestry
 
 
-## brands table
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-- has_many :items
-
-
 ## item_images table
 
 |Column|Type|Options|
