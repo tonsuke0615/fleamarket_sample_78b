@@ -10,10 +10,23 @@
         ※必須
       .ImageField
         = f.fields_for :item_images do |i|
-          -# .ImageField__form
-          -#   = f.label :image do
-          -#     = icon('fas', 'camera', class: "ImageField__form--icon")
-          = i.file_field :src, class: "ImageField__form--uploader"
+          .ImageField__form
+            = f.label :image do
+              = icon('fas', 'camera', class: "ImageField__form--icon")
+              = f.file_field :image, class: "ImageField__form--uploader"
+              -# 実際に使うコード　= i.file_field :src,class: "ImageField__uploader"
+          .ImageField__form
+            = f.label :image do
+              = icon('fas', 'camera', class: "ImageField__form--icon")
+              = f.file_field :image, class: "ImageField__form--uploader"
+          .ImageField__form
+            = f.label :image do
+              = icon('fas', 'camera', class: "ImageField__form--icon")
+              = f.file_field :image, class: "ImageField__form--uploader"
+          .ImageField__form
+            = f.label :image do
+              = icon('fas', 'camera', class: "ImageField__form--icon")
+              = f.file_field :image, class: "ImageField__form--uploader"
     .ItemInfo  
       .ItemInfo__text
         商品名
@@ -45,6 +58,7 @@
         商品の状態
       .ItemInfo__text--require
         ※必須
+        -# 本来はactive_hashを使用しデータを取得。以下同じ。
       .ItemInfo__condition--form
       = f.collection_select :condition_id, Condition.all, :id, :status, {prompt: "選択してください"}, {class: "formSize", id: "condition_form"}
     .ItemInfo
