@@ -6,11 +6,28 @@ class ItemsController < ApplicationController
 
   def new 
     @item = Item.new
+    # @item.images.new
     @item_image = ItemImage.new
   end
 
   def create
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
+
+  def edit
+  end
+
+  def update
+  end
+
+  # まだ機能実装していないのでコメントアウト
+  # def destroy
+  # end
 
   def search
     respond_to do |format|
@@ -25,8 +42,14 @@ class ItemsController < ApplicationController
     end
   end
 
+private
+
   def set_parents
     @parents = Category.where(ancestry: nil)
+  end
+
+  def item_params
+    params.require(:item).permit(:name, :price, :)
   end
 
 end
