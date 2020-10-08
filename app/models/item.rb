@@ -14,5 +14,5 @@ class Item < ApplicationRecord
   # has_one :order
   # has_many :comments, dependent: :destroy
 
-  validates :name, :detail, :price, :category, :shippingFee_id, :condition_id, :shippingFrom_id, :preparationDay_id, :user, presence: true
+  validates :name, :detail, :price, :category, :shippingFee_id, :condition_id, :shippingFrom_id, :preparationDay_id, presence: true
 end
