@@ -2,6 +2,9 @@ class ItemsController < ApplicationController
   before_action :set_parents, only: [:new, :create]
 
   def index
+    @items = Item.order("id DESC").limit(5)
+    @item_images = ItemImage.all
+    @randoms = Item.order("RANDOM(categry_id)").limit(5)
   end
 
   def new 
