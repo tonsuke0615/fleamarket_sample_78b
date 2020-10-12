@@ -73,5 +73,19 @@ describe Item do
       expect(item.errors[:user_id]).to include("can't be blank")
     end
 
+    # 価格がなければ出品できない
+    it "is invalid without price" do
+      item = build(:item, price: "")
+      item.valid?
+      expect(item.errors[:price]).to include("can't be blank")
+    end
+
+    # ブランド(任意)を入力しても出品できる
+    it "is valid with brand" do
+      item = build(:item, brand: "adidas")
+      item.valid?
+      expect(item).to be_valid
+    end
+
   end
 end
