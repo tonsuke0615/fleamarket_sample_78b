@@ -2,7 +2,7 @@ require 'rails_helper'
 describe Item do
   describe '#create' do
 
-    it "is valid with a name,detail,price,category_id,shippingFee_id,condition_id,shippingFrom_id,preparationDay_id,user_id " do
+    it "is valid with item_image,name,detail,price,category_id,shippingFee_id,condition_id,shippingFrom_id,preparationDay_id,user_id " do
       item = build(:item)
       item.valid?
       expect(item).to be_valid
@@ -10,7 +10,6 @@ describe Item do
 
     it "is invalid without an image" do
       item = build(:item)
-      # item.item_images = build(:item_image, src: "")
       item.item_images.clear
       item.valid?
       expect(item.errors[:item_images]).to include("can't be blank")
@@ -46,7 +45,7 @@ describe Item do
       expect(item.errors[:condition_id]).to include("can't be blank")
     end
 
-    it "is invalid without a shippingFrom-id" do
+    it "is invalid without a shippingFrom_id" do
       item = build(:item, shippingFrom_id: "")
       item.valid?
       expect(item.errors[:shippingFrom_id]).to include("can't be blank")
@@ -58,13 +57,11 @@ describe Item do
       expect(item.errors[:preparationDay_id]).to include("can't be blank")
     end
 
-    # 本来は必要だが、user登録機能がまだないのでコメントアウト
-    # it "is invalid without an user_id" do
-    #   item = build(:item, user_id: "")
-    #   item.valid?
-    #   expect(item.errors[:user_id]).to include("can't be blank")
-    # end
-
+    it "is invalid without an user_id" do
+      item = build(:item, user_id: "")
+      item.valid?
+      expect(item.errors[:user_id]).to include("can't be blank")
+    end
 
   end
 end
