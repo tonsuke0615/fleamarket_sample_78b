@@ -2,11 +2,19 @@ require 'rails_helper'
 describe Item do
   describe '#create' do
 
-    # it "is valid with a name,detail,price,category_id,shippingFee_id,condition_id,shippingFrom_id,preparationDay_id,user_id " do
-    #   item = build(:item, buyer_id: "")
-    #   item.valid?
-    #   expect(item).to be_valid
-    # end
+    it "is valid with a name,detail,price,category_id,shippingFee_id,condition_id,shippingFrom_id,preparationDay_id,user_id " do
+      item = build(:item)
+      item.valid?
+      expect(item).to be_valid
+    end
+
+    it "is invalid without an image" do
+      item = build(:item)
+      # item.item_images = build(:item_image, src: "")
+      item.item_images.clear
+      item.valid?
+      expect(item.errors[:item_images]).to include("can't be blank")
+    end
 
     it "is invalid without a name" do
       item = build(:item, name: "")
