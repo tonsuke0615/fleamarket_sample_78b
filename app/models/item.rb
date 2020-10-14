@@ -15,7 +15,8 @@ class Item < ApplicationRecord
   # has_one :order
   # has_many :comments, dependent: :destroy
 
-  validates :name, :detail, :price, :category_id, :shippingFee_id, :condition_id, :shippingFrom_id, :preparationDay_id, :user_id, presence: true
+  # user_idも下記に追加する
+  validates :name, :detail, :price, :category_id, :shippingFee_id, :condition_id, :shippingFrom_id, :preparationDay_id, presence: true
   validates_associated :item_images
   validates :item_images, presence: true
 end
