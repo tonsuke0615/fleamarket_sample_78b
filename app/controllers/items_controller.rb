@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path, notice: "出品が完了しました"
     else
-      flash.now[:alert] = "入力情報に不足があります"
+      flash.now[:alert] = "入力情報が不足しています"
       render :new,　locals: {item: new}
     end
   end
