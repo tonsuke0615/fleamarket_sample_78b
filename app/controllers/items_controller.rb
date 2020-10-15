@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
       
     else
       flash.now[:alert] = "必須情報が不足しています"
-      render :new,　locals: {item: new}
+      render :new, locals: {item: new}
     end
   end
 
