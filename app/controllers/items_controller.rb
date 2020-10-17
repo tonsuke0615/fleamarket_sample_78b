@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.order("id DESC").limit(5)
-    @item_images = ItemImage.all
+    # @item_images = ItemImage.all
     @randoms = Item.order("RANDOM(categry_id)").limit(5)
   end
 
@@ -40,8 +40,15 @@ class ItemsController < ApplicationController
     end
   end
 
+
+private
+
   def set_parents
     @parents = Category.where(ancestry: nil)
+  end
+
+  def item_params
+    params.require(:item).permit(:name, :price, :detail, :brand, :category_id, :condition_id , :shippingFee_id , :shippingFrom_id, :preparationDay_id , item_images_attributes: [:src])
   end
 
 end
