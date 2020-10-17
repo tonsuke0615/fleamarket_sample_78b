@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
 
   def new 
     @item = Item.new
-    @item_image = ItemImage.new
+    @item.item_images.new
   end
 
   def create
@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      render :new, locals: {item: new}
+      render :new,locals: {item: new}
     end
   end
 
@@ -26,6 +26,10 @@ class ItemsController < ApplicationController
 
   def update
   end
+
+  # まだ機能実装していないのでコメントアウト
+  # def destroy
+  # end
 
   def search
     respond_to do |format|
@@ -39,8 +43,6 @@ class ItemsController < ApplicationController
       end
     end
   end
-
-
 private
 
   def set_parents
