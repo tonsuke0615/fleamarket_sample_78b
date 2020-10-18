@@ -15,7 +15,7 @@ class Item < ApplicationRecord
   # has_one :order
   # has_many :comments, dependent: :destroy
 
-  # user_idも下記に追加する
+  # ユーザ登録機能実装後に、下記にuser_idも追加する
   validates :name, :detail, :price, :category_id, :shippingFee_id, :condition_id, :shippingFrom_id, :preparationDay_id, presence: true
   validates_associated :item_images
   validates :item_images, presence: true
