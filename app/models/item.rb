@@ -1,5 +1,4 @@
 class Item < ApplicationRecord
-  # ユーザー登録が未実装のためコメントアウト
   # belongs_to :user
   belongs_to :category
   has_many :item_images, dependent: :destroy
@@ -15,8 +14,7 @@ class Item < ApplicationRecord
   # has_one :order
   # has_many :comments, dependent: :destroy
 
-  # ユーザ登録機能実装後に、下記にuser_idも追加する
-  validates :name, :detail, :price, :category_id, :shippingFee_id, :condition_id, :shippingFrom_id, :preparationDay_id, presence: true
+  validates :name, :detail, :price, :category, :shippingFee_id, :condition_id, :shippingFrom_id, :preparationDay_id, presence: true
   validates_associated :item_images
   validates :item_images, presence: true
 end

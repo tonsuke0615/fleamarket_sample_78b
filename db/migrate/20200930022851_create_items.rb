@@ -11,7 +11,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :shippingFrom_id, null: false
       t.integer :preparationDay_id, null: false
       t.references :user, foreign_key: true
-      # # 実際は下記を使用すること（テストデータ作成のためuserのバリデーションを外しています
+      # 実際は下記を使用すること（テストデータ作成のためuserのバリデーションを外しています
       # t.references :user, null: false, foreign_key: true
       t.integer :buyer_id
       t.timestamps
