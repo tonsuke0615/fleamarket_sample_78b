@@ -105,6 +105,13 @@
   }
 }
 
+// .User-set__Complete{
+//   height: 600px;
+//   &__Title{
+//     width: 300px;
+//   }
+// }
+
 .category{
   text-align: left;
   vertical-align: middle;
@@ -130,6 +137,18 @@
 .User-set__MainlField__Submit{
   margin: 50px 0 70px 0;
   text-align: center;
+}
+
+.NextButton{
+  background: #3CCACE;
+  color: white;
+  font-weight: bold;
+  border: #3CCACE;
+  padding: 7px 50px;
+  width: 180px;
+  line-height: 30px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .Button_UserButton{
