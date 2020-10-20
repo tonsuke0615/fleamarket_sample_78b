@@ -8,11 +8,9 @@ Rails.application.routes.draw do
     post 'profiles', to: 'users/registrations#create_profile'
     get 'destinations', to: 'users/registrations#new_destination'
     post 'destinations', to: 'users/registrations#create_destination'
-    # get 'login', to: 'devise/sessions#new'
-    # post 'login', to: 'devise/sessions#create'
   end
   root to: 'items#index'
-  resources :items, only: [:index, :new, :create, :show] do
+  resources :items, only: [:index, :new, :create, :show, :edit, :update] do
     collection do
       get :search
     end
