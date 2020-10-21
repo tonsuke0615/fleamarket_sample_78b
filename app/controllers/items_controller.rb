@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_parents, only: [:new, :create]
 
   def index
+    @items = Item.order("id DESC").limit(5)
   end
 
   def new 
@@ -42,7 +43,6 @@ class ItemsController < ApplicationController
       end
     end
   end
-
 private
 
   def set_parents

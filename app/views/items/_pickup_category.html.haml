@@ -5,58 +5,61 @@
   .PickupContainer__box__subtitle
     = link_to '新規投稿商品', '#' , class: 'subtitle'
     .PickupContainer__box__lists
-      .PickupContainer__box__lists__list
-        = link_to (image_tag 'Pic.halloween_2017.png', class:'image_list', height:'170'),'#'
-        .PickupContainer__box__lists__list__contents
-          .PickupContainer__box__lists__list__contents--name
-            名前
-          .PickupContainer__box__lists__list__contents--price
-            値段
-          .PickupContainer__box__lists__list__contents--price--taxinclude
-            （税込）
-      .PickupContainer__box__lists__list
-        = link_to (image_tag 'Pic.ARALE.png', class:'image_list', height:'170'),'#'
-        .PickupContainer__box__lists__list__contents
-          .PickupContainer__box__lists__list__contents--name
-            名前
-          .PickupContainer__box__lists__list__contents--price
-            値段
-            .PickupContainer__box__lists__list__contents--price--taxinclude
-              （税込）
+      - @items.each do |item|
+        -if item.buyer_id.present?
+          .PickupContainer__box__lists__list
+            = link_to item_path(item),class: 'PickupContainer__box__lists__list' do
+              .sold
+                .sold__inner
+                  SOLD 
+              .image_list
+                = image_tag item.item_images.first.src.url if item.item_images.first 
+                .name
+                  = item.name
+                  .price
+                    = item.price              
+                  .taxinclude 
+                    (税込)
+        -else
+          .PickupContainer__box__lists__list
+            = link_to item_path(item),class: 'PickupContainer__box__lists__list' do
+              = image_tag item.item_images.first.src.url if item.item_images.first 
+              .name
+                = item.name
+                .price
+                  = item.price              
+                .taxinclude 
+                  (税込)
+              
+.PickupContainer
   .PickupContainer__title
     ピックアップブランド
   .PickupContainer__box
   .PickupContainer__box__subtitle
     = link_to 'アーカイバ', '#' , class: 'subtitle'
     .PickupContainer__box__lists
-      .PickupContainer__box__lists__list
-        = link_to (image_tag 'Pic.kuu_ohana.png', class:'image_list', height:'190'),'#'
-        .PickupContainer__box__lists__list__contents
-          .PickupContainer__box__lists__list__contents--name
-            名前
-          .PickupContainer__box__lists__list__contents--price
-            値段
-            .PickupContainer__box__lists__list__contents--price--taxinclude
-              （税込）
-      .PickupContainer__box__lists__list
-        = link_to (image_tag 'Pic.cars.png', class:'image_list', height:'190'),'#'
-        .PickupContainer__box__lists__list__contents
-          .PickupContainer__box__lists__list__contents--name
-            名前
-          .PickupContainer__box__lists__list__contents--price
-            値段
-            .PickupContainer__box__lists__list__contents--price--taxinclude
-              （税込）
-      .PickupContainer__box__lists__list
-        = link_to (image_tag 'Pic.noel_2017.png', class:'image_list', height:'190'),'#'
-        .PickupContainer__box__lists__list__contents
-          .PickupContainer__box__lists__list__contents--name
-            名前
-          .PickupContainer__box__lists__list__contents--price
-            値段
-            .PickupContainer__box__lists__list__contents--price--taxinclude
-              （税込）
-
-
-      
-  
+      - @items.each do |item|
+        -if item.buyer_id.present?
+          .PickupContainer__box__lists__list
+            = link_to item_path(item),class: 'PickupContainer__box__lists__list' do
+              .sold
+                .sold__inner
+                  SOLD 
+            .image_list
+              = image_tag item.item_images.first.src.url if item.item_images.first 
+              .name
+                = item.name
+                .price
+                  = item.price              
+                .taxinclude 
+                  (税込)
+        -else
+          .PickupContainer__box__lists__list
+            = link_to item_path(item),class: 'PickupContainer__box__lists__list' do
+              = image_tag item.item_images.first.src.url if item.item_images.first 
+              .name
+                = item.name
+                .price
+                  = item.price              
+                .taxinclude 
+                  (税込)
