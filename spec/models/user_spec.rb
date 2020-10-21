@@ -8,7 +8,6 @@ describe User do
     end
     # 2
     it "nickname無しでは登録できないこと" do
-      # user = User.new(nickname: "", email: "kkk@gmail.com", password: "00000000", password_confirmation: "00000000")
       user = build(:user, nickname: "")
       user.valid?
       expect(user.errors[:nickname]).to include("can't be blank")
