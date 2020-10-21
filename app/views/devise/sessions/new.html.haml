@@ -2,19 +2,19 @@
   = render 'items/top_header'
 
   .User-set__MainlField
-    = form_with url: new_user_registration_path do |f|
+    = form_with model: @user, url: user_session_path, local: true do |f|
       .User-set__MainlField__title
         = "ログインページ"
       .User-set__MainlField__user-form
         .User-set__MainlField__user-form__email
           = f.label "e-mail", class: 'category'
           = f.label "※必須", class: 'required'
-          = f.email_field :content, class: 'text_field', placeholder: '＊＊＊@gmail.com', size: 46
+          = f.email_field :email, class: 'text_field', placeholder: '＊＊＊@gmail.com', size: 46
         .User-set__MainlField__user-form__password
           = f.label "パスワード", class: 'category'
           = f.label "※必須", class: 'required'
-          = f.password_field :content, class: 'text_field', placeholder: '半角英数7文字以上'
+          = f.password_field :password, class: 'text_field', placeholder: '半角英数7文字以上'
       .User-set__MainlField__Submit
-        = link_to "  ログイン  ", mypage_index_path, class: 'Button_UserButton'
+        = f.submit "ログイン", class: 'Button_UserButton'
 
   = render 'items/bottom_footer'

@@ -68,17 +68,25 @@
         color: #333;
         line-height: 38px;
         padding: 0 0 0 16px;
+        text-decoration: none;
+        list-style: none;
       }
       &__new {
         color: #333;
         line-height: 38px;
         padding: 0 0 0 16px;
+        text-decoration: none;
+        list-style: none;
+      }
+      &__mypage{
+        list-style: none;
       }
     }
   }
 .login {
   color: #333;
   text-decoration: none;
+  list-style: none;
 }
 .new {
   color: #333;

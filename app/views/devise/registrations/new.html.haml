@@ -2,86 +2,27 @@
   = render 'items/top_header'
 
   .User-set__MainlField
-    = form_with url: new_user_registration_path do |f|
+    = form_with model: @user, url: user_registration_path, local: true do |f|
       .User-set__MainlField__title
         = "新規会員登録"
       .User-set__MainlField__user-form
         .User-set__MainlField__user-form__nickname
           = f.label "ニックネーム", class: 'category'
           = f.label "※必須", class: 'required'
-          = f.text_field :content, class: 'text_field', placeholder: '全角入力'
+          = f.text_field :nickname, class: 'text_field', placeholder: '全角入力'
         .User-set__MainlField__user-form__email
           = f.label "e-mail", class: 'category'
           = f.label "※必須", class: 'required'
-          = f.email_field :content, class: 'text_field', placeholder: '＊＊＊@gmail.com', size: 46
+          = f.email_field :email, class: 'text_field', placeholder: '＊＊＊@gmail.com', size: 46
         .User-set__MainlField__user-form__password
           = f.label "パスワード", class: 'category'
           = f.label "※必須", class: 'required'
-          = f.password_field :content, class: 'text_field', placeholder: '半角英数7文字以上'
+          = f.password_field :password, class: 'text_field', placeholder: '半角英数7文字以上'
         .User-set__MainlField__user-form__password
           = f.label "パスワード（確認用）", class: 'category'
           = f.label "※必須", class: 'required'
-          = f.password_field :content, class: 'text_field', placeholder: '半角英数7文字以上'
-        .User-set__MainlField__user-form__name
-          = f.label "氏　名", class: 'category'
-          .User-set__MainlField__user-form__name__family
-            = f.label "※必須", class: 'required'
-            = f.text_field :content, class: 'text_field', placeholder: '姓_全角', size: 22
-          .User-set__MainlField__user-form__name__first
-            = f.text_field :content, class: 'text_field', placeholder: '名_全角', size: 22
-        .User-set__MainlField__user-form__name_kana
-          = f.label "フリガナ", class: 'category'
-          .User-set__MainlField__user-form__name_kana__family
-            = f.label "※必須", class: 'required'
-            = f.text_field :content, class: 'text_field', placeholder: 'セイ_全角', size: 22
-          .User-set__MainlField__user-form__name_kana__first
-            = f.text_field :content, class: 'text_field', placeholder: 'メイ_全角', size: 22
-        .User-set__MainlField__user-form__birth_date
-          = f.label "誕生日", class: 'category'
-          = f.label "※必須", class: 'required'
-          = f.text_field :content, class: 'text_field', placeholder: '例）20200101'
-        .User-set__MainlField__user-form__creditcard_id
-          = link_to "クレジットカード 登録画面", '#', class: 'creditcard-new'
-      .User-set__MainlField__destination-title
-        = "商品送付先情報"
-      .User-set__MainlField__destination-form
-        .User-set__MainlField__destination-form__name
-          = f.label "氏　名", class: 'category'
-          .User-set__MainlField__destination-form__name__family
-            = f.label "※必須", class: 'required'
-            = f.text_field :content, class: 'text_field', placeholder: '姓_全角', size: 22
-          .User-set__MainlField__destination-form__name__first
-            = f.text_field :content, class: 'text_field', placeholder: '名_全角', size: 22
-        .User-set__MainlField__destination-form__name_kana
-          = f.label "フリガナ", class: 'category'
-          .User-set__MainlField__destination-form__name_kana__family
-            = f.label "※必須", class: 'required'
-            = f.text_field :content, class: 'text_field', placeholder: 'セイ_全角', size: 22
-          .User-set__MainlField__destination-form__name_kana__first
-            = f.text_field :content, class: 'text_field', placeholder: 'メイ_全角', size: 22
-        .User-set__MainlField__destination-form__post_code
-          = f.label "郵便番号", class: 'category'
-          = f.label "※必須", class: 'required'
-          = f.text_field :content, class: 'text_field', placeholder: '「ー」は省略'
-        .User-set__MainlField__destination-form__prefecture
-          = f.label "都道府県", class: 'category'
-          = f.label "※必須", class: 'required'
-          = f.text_field :content, class: 'text_field', placeholder: '＊＊県'
-        .User-set__MainlField__destination-form__city
-          = f.label "市区町村", class: 'category'
-          = f.label "※必須", class: 'required'
-          = f.text_field :content, class: 'text_field', placeholder: '＊＊市＊＊区＊＊町'
-        .User-set__MainlField__destination-form__address
-          = f.label "番　地", class: 'category'
-          = f.label "※必須", class: 'required'
-          = f.text_field :content, class: 'text_field', placeholder: '〇〇ー〇〇ー〇〇'
-        .User-set__MainlField__destination-form__building
-          = f.label "マンション名 〇〇号室", class: 'category'
-          = f.text_field :content, class: 'text_field', placeholder: '全角', size: 52
-        .User-set__MainlField__destination-form__phone
-          = f.label "電話番号", class: 'category'
-          = f.text_field :content, class: 'text_field', placeholder: '「ー」は省略', size: 52
+          = f.password_field :password_confirmation, class: 'text_field', placeholder: '半角英数7文字以上'
       .User-set__MainlField__Submit
-        = f.submit "   登　録   ", class: 'Button_UserButton'
+        = f.submit " 次　へ ", class: 'NextButton'
 
   = render 'items/bottom_footer'
