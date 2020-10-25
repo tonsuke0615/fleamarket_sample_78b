@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path, notice: "出品が完了しました"
@@ -47,9 +48,6 @@ class ItemsController < ApplicationController
 
 private
 
-  def set_user_id
-    @user_id = current_user.id
-  end
 
   def set_parents
     @parents = Category.where(ancestry: nil)
