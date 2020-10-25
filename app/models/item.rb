@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  
   # ユーザー登録が未実装のためコメントアウト
   # belongs_to :user
   belongs_to :category
