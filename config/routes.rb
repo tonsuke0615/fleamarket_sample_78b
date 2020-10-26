@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     get 'destinations', to: 'users/registrations#new_destination'
     post 'destinations', to: 'users/registrations#create_destination'
   end
-  root to: 'items#index'
-  resources :items, only: [:index, :new, :create, :show, :edit, :update] do
+  root 'items#index'
+  resources :items, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     collection do
       get :search
     end

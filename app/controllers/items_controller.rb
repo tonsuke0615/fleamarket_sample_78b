@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.order("id DESC").limit(5)
+    @item_images = ItemImage.all
   end
 
   def new 
@@ -27,9 +28,14 @@ class ItemsController < ApplicationController
   def update
   end
 
-  # まだ機能実装していないのでコメントアウト
-  # def destroy
-  # end
+  def show
+    @item = Item.find(params[:id])
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+  end
 
   def search
     respond_to do |format|
