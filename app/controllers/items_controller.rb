@@ -5,7 +5,6 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.order("id DESC").limit(5)
-    @item_images = ItemImage.all
   end
 
   def new 
@@ -34,8 +33,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if @item.destroy
-    else
+    unless @item.destroy
       redirect_to item_path(@item.id), alert: '削除に失敗しました'
     end
   end
