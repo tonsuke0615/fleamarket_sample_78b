@@ -17,8 +17,9 @@ class ItemsController < ApplicationController
       redirect_to root_path, notice: "出品が完了しました"
       
     else
+      # binding.pry
       flash.now[:alert] = "必須情報が不足しています"
-      render :new, locals: {item: new}
+      render :new
     end
   end
 
