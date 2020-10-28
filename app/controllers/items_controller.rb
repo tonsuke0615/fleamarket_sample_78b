@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_parents, only: [:new, :create]
+  before_action :set_item, only: [:show, :destroy]
 
   def index
     @items = Item.order("id DESC").limit(5)
@@ -29,12 +30,13 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def destroy
-    item = Item.find(params[:id])
-    item.destroy
+    if @item.destroy
+    else
+      redirect_to item_path(@item.id), alert: '削除に失敗しました'
+    end
   end
 
   def search
@@ -49,7 +51,8 @@ class ItemsController < ApplicationController
       end
     end
   end
-private
+
+  private
 
   def set_parents
     @parents = Category.where(ancestry: nil)
@@ -59,4 +62,7 @@ private
     params.require(:item).permit(:name, :price, :detail, :brand, :category_id, :condition_id , :shippingFee_id , :shippingFrom_id, :preparationDay_id , item_images_attributes: [:src])
   end
 
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
