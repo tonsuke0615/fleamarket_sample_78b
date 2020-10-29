@@ -1,0 +1,28 @@
+.Top_delite {
+  height:500px;
+  width: 500px;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 80px;
+  &__delite {
+    color: black;
+    font-size:22px;
+    text-align: center;
+  }
+  &__return {
+    justify-content:center;
+    background-color:#3CCACE;
+    height:70px;
+    width: 500px;
+    border-radius: 10px;
+    margin-top: 80px;
+    display:flex;
+    .return{
+      color:#fff;
+      font-size:22px;
+      text-align: center;
+      text-decoration:none;
+      margin-top:14px;
+    }
+  }
+}

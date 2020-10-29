@@ -6,6 +6,7 @@ require 'carrierwave/storage/fog'
 # 保存先の分岐
 CarrierWave.configure do |config|
   if Rails.env.development? || Rails.env.test?
+
      config.storage = :file # 開発環境:public/uploades下に保存
   else
     config.storage = :fog
