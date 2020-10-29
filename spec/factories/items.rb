@@ -4,10 +4,10 @@ FactoryBot.define do
     name               {"テスト商品"}
     detail             {"テスト説明"}
     category_id        {create(:category).id}
-    shippingFee_id     {"1"}
+    shipping_fee_id    {"1"}
     condition_id       {"1"}
-    shippingFrom_id    {"1"}
-    preparationDay_id  {"1"}
+    shipping_from_id   {"1"}
+    preparation_day_id {"1"}
     user_id            {"1"}
     price              {"1000"}
 
