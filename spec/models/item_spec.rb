@@ -3,7 +3,7 @@ describe Item do
   describe '#create' do
 
     # すべての項目が入力されていれば出品できる
-    it "is valid with item_image,name,detail,price,category_id,shippingFee_id,condition_id,shippingFrom_id,preparationDay_id,user_id " do
+    it "is valid with item_image,name,detail,price,category_id,shipping_fee_id,condition_id,shipping_from_id,preparation_day_id,user_id " do
       item = build(:item)
       item.valid?
       expect(item).to be_valid
@@ -39,10 +39,10 @@ describe Item do
     end
 
     # 配送料がなければ出品できない
-    it "is invalid without a shippingFee_id" do
-      item = build(:item, shippingFee_id: "")
+    it "is invalid without a shipping_fee_id" do
+      item = build(:item, shipping_fee_id: "")
       item.valid?
-      expect(item.errors[:shippingFee_id]).to include("can't be blank")
+      expect(item.errors[:shipping_fee_id]).to include("can't be blank")
     end
 
     # 商品の状態がなければ出品できない
@@ -53,17 +53,17 @@ describe Item do
     end
 
     # 配送元エリアがなければ出品できない
-    it "is invalid without a shippingFrom_id" do
-      item = build(:item, shippingFrom_id: "")
+    it "is invalid without a shipping_from_id" do
+      item = build(:item, shipping_from_id: "")
       item.valid?
-      expect(item.errors[:shippingFrom_id]).to include("can't be blank")
+      expect(item.errors[:shipping_from_id]).to include("can't be blank")
     end
 
     # 発送までの日数がなければ出品できない
-    it "is invalid without a preparationDay_id" do
-      item = build(:item, preparationDay_id: "")
+    it "is invalid without a preparation_day_id" do
+      item = build(:item, preparation_day_id: "")
       item.valid?
-      expect(item.errors[:preparationDay_id]).to include("can't be blank")
+      expect(item.errors[:preparation_day_id]).to include("can't be blank")
     end
 
     # ユーザーIDがなければ出品できない
