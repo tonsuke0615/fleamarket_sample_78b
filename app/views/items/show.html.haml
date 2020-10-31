@@ -76,14 +76,19 @@
           .Main-block__Item-coment__Icon__Report__Icon
             = icon('fa', 'flag', class:"Flag-Icon")
             = "不適切な商品の通報"
-          
+            
     .Main-block__Items-link
       %ul.Main-block__Items-link__Block
         %li.Main-block__Items-link__Block__FrontItem
           = link_to '< 前の商品', "#", class: 'Item-btn'
         %li.Main-block__Items-link__Block__BackItem
           = link_to '後ろの商品 >', "#", class: 'Item-btn'
-     
+
+    .Main-block__contents
+      .Main-block__contents__content__edit
+        = link_to '商品の編集', '#', class: 'edit'
+      .Main-block__contents__content__delite
+        = link_to '商品の削除', item_path(@item.id),method: :delete , class: 'delete'
     .Main-block__Related-items
       = link_to 'ベビー・キッズをもっと見る', "#", class: 'Related-btn'
       .PickupContainer__box__lists__list

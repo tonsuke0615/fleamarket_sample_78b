@@ -84,10 +84,10 @@
 |price|integer|null: false|
 |category|references|null: false, foreign_key: true|
 |brand|string||
-|shippingFee|integer|null: false|
+|shipping_fee|integer|null: false|
 |condition|integer|null: false|
-|shippingFrom|integer|null: false|
-|preparationDay|integer|null: false|
+|shipping_from|integer|null: false|
+|preparation_day|integer|null: false|
 |user|references|null: false, foreign_key: true|
 <!-- active_hashを使用するものはreference型ではなくintegerでforeign_keyも使用しない（レビューにて確認済） -->
 

@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   before_action :set_parents, only: [:new, :create]
+  before_action :set_item, only: [:show, :destroy]
 
   def index
     @items = Item.order("id DESC").limit(5)
@@ -29,9 +30,14 @@ class ItemsController < ApplicationController
   def update
   end
 
-  # まだ機能実装していないのでコメントアウト
-  # def destroy
-  # end
+  def show
+  end
+
+  def destroy
+    unless @item.destroy
+      redirect_to item_path(@item.id), alert: '削除に失敗しました'
+    end
+  end
 
   def search
     respond_to do |format|
@@ -45,14 +51,18 @@ class ItemsController < ApplicationController
       end
     end
   end
-private
+
+  private
 
   def set_parents
     @parents = Category.where(ancestry: nil)
   end
 
   def item_params
-    params.require(:item).permit(:name, :price, :detail, :brand, :category_id, :condition_id , :shippingFee_id , :shippingFrom_id, :preparationDay_id , item_images_attributes: [:src]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :price, :detail, :brand, :category_id, :condition_id , :shipping_fee_id , :shipping_from_id, :preparation_day_id , item_images_attributes: [:src]).merge(user_id: current_user.id)
   end
 
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
