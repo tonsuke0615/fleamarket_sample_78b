@@ -30,6 +30,9 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
+    condition = Condition.data
+    @conditionStatus = condition[0][:status]
   end
 
   def destroy
