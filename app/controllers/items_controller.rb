@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
       
     else
       # binding.pry
+      @item.item_images.new
       flash.now[:alert] = "必須情報が不足しています"
       render :new
     end
