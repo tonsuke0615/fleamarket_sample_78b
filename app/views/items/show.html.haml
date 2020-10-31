@@ -86,7 +86,7 @@
 
     .Main-block__contents
       .Main-block__contents__content__edit
-        = link_to '商品の編集', '#', class: 'edit'
+        = link_to '商品の編集', edit_item_path(@item.id), method: :get, class: 'edit'
       .Main-block__contents__content__delite
         = link_to '商品の削除', item_path(@item.id),method: :delete , class: 'delete'
     .Main-block__Related-items

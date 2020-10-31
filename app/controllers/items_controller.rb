@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-  before_action :set_parents, only: [:new, :create]
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_parents, only: [:new, :create,:edit, :update]
+  before_action :set_item, only: [:show, :destroy, :edit, :update]
 
   def index
     @items = Item.order("id DESC").limit(5)
@@ -24,9 +24,12 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
   end
 
   def update
+    @item = Item.find(params[:id])
+    @item.update(item_params)
   end
 
   def show
