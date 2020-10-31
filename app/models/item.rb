@@ -9,7 +9,8 @@ class Item < ApplicationRecord
   belongs_to_active_hash :condition
   belongs_to_active_hash :shipping_fee
   belongs_to_active_hash :shipping_from
-  belongs_to_active_hash :preparationDay
+  belongs_to_active_hash :preparation_day
+
 
   # テーブル未作成のため下記コメントアウト中。実装で必要になったタイミングで外してください
   # has_one :order
