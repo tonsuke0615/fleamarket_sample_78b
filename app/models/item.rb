@@ -11,6 +11,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_from
   belongs_to_active_hash :preparation_day
 
+
   # テーブル未作成のため下記コメントアウト中。実装で必要になったタイミングで外してください
   # has_one :order
   # has_many :comments, dependent: :destroy
