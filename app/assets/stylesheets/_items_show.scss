@@ -155,10 +155,10 @@
       }
     }
     &__contents {
-      display:flex;
+      display: flex;
       justify-content: space-around;
       padding:100px 20px 70px 20px;
-      &__content__edit {
+      &__edit {
         justify-content: space-around;
         background-color:#3CCACE;
         height:60px;
@@ -166,14 +166,7 @@
         border-radius: 10px;
         display:flex;
       }
-      .edit {
-        color:#fff;
-        font-size: 20px;
-        text-align: center;
-        margin-top: 15px;
-        text-decoration: none;
-      } 
-      &__content__delite {
+      &__delete {
         justify-content: space-around;
         background-color:#3CCACE;
         height:60px;
@@ -181,27 +174,48 @@
         border-radius: 10px;
         display:flex;
       }
-      .delete {
-      color:#fff;
-      font-size: 20px;
-      text-align:center;
-      margin-top: 13px;
-      text-decoration: none;
-      } 
-    }
-  
-    &__Related-items{
-      width: 100%;
-      .Related-btn{
-        display: block;
-        margin: 24px 0 32px;
-        color: #3CCACE;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 22px;
-        position: relative;
+      &__buy {
+        justify-content: space-around;
+        background-color:#3CCACE;
+        height:60px;
+        width:250px;
+        border-radius: 10px;
+        display:flex;
       }
     }
+.edit {
+  color:#fff;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 15px;
+  text-decoration: none;
+} 
+.delete {
+  color:#fff;
+  font-size: 20px;
+  text-align:center;
+  margin-top: 13px;
+  text-decoration: none;
+} 
+.buy {
+  color:#fff;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 15px;
+  text-decoration: none;
+} 
+  &__Related-items{
+    width: 100%;
+  }
+.Related-btn{
+  display: block;
+  margin: 24px 0 32px;
+  color: #3CCACE;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px;
+  position: relative;
+}
   }
 }
 
