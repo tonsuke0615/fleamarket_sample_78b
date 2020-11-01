@@ -6,6 +6,10 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+class ActiveHash::Base
+  extend ActiveModel::Translation
+end
+
 module FleamarketSample78b
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -19,6 +23,8 @@ module FleamarketSample78b
       g.helper false
       g.test_framework false
     end
+
+    
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
