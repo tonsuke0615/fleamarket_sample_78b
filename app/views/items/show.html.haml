@@ -8,44 +8,46 @@
   .Main-block
     .Main-block__Item-ditail
       .Main-block__Item-ditail__Name
-        eee
+        = @item.name
       %ul.Main-block__Item-ditail__PictureBox
         %li.Main-block__Item-ditail__PictureBox__Main
-          = image_tag 'pict-reason-02.jpg', class: 'MainPicture'
+          = image_tag @item.item_images.first.src.url, class: 'MainPicture'
         %ul.Main-block__Item-ditail__PictureBox__Sub
           %li.Main-block__Item-ditail__PictureBox__Sub__1
-            = image_tag 'pict-reason-03.jpg', class: 'SubPicture'
+          - if @item.item_images.second.present?
+            = image_tag @item.item_images.second.src.url, class: 'SubPicture'
           %li.Main-block__Item-ditail__PictureBox__Sub__2
-            = image_tag 'pict-reason-01.jpg', class: 'SubPicture'
+          - if @item.item_images.third.present?
+            = image_tag @item.item_images.third.src.url, class: 'SubPicture'
       .Main-block__Item-ditail__PriceBox
         .Main-block__Item-ditail__PriceBox__Price
-          ¥10000
+          = @item.price
         .Main-block__Item-ditail__PriceBox__Ditail
           (税込) 送料込み
     .Main-block__Item-coment
       .Main-block__Item-coment__ItemName
-        eee
+        = @item.name
       .Main-block__Item-coment__Table
         .Main-block__Item-coment__Table__Body
           .Main-block__Item-coment__Table__Body__Category
             出品者
           .Main-block__Item-coment__Table__Body__Coment
-            ss
+            = @item.user.nickname
         .Main-block__Item-coment__Table__Body
           .Main-block__Item-coment__Table__Body__Category
             カテゴリー
           %ul.Main-block__Item-coment__Table__Body__Coment
             %li.CategoryName__1
-              = link_to "ベビー・キッズ", "#", class: 'CategoryName'
+              = link_to @item.category.root.name, "#", class: 'CategoryName'
             %li.CategoryName__2
-              = link_to "ベビー服(男の子用) ~95cm", "#", class: 'CategoryName'
+              = link_to @item.category.parent.name, "#", class: 'CategoryName'
             %li.CategoryName__3
-              = link_to "アウター", "#", class: 'CategoryName'
+              = link_to @item.category.name, "#", class: 'CategoryName'
         .Main-block__Item-coment__Table__Body
           .Main-block__Item-coment__Table__Body__Category
             ブランド
           .Main-block__Item-coment__Table__Body__Coment
-            
+            = @item.brand
         .Main-block__Item-coment__Table__Body
           .Main-block__Item-coment__Table__Body__Category
             商品のサイズ
@@ -55,22 +57,22 @@
           .Main-block__Item-coment__Table__Body__Category
             商品の状態
           .Main-block__Item-coment__Table__Body__Coment
-            新品/未使用
+            = @item.condition.attributes[:status]
         .Main-block__Item-coment__Table__Body
           .Main-block__Item-coment__Table__Body__Category
             配送料の負担
           .Main-block__Item-coment__Table__Body__Coment
-            送料込み（発走者負担）
+            = @item.shipping_fee[:status]
         .Main-block__Item-coment__Table__Body
           .Main-block__Item-coment__Table__Body__Category
             発送元の地域
           .Main-block__Item-coment__Table__Body__Coment
-            = link_to "北海道", "#", class: 'CategoryName'
+            = link_to @item.shipping_from[:name], "#", class: 'CategoryName'
         .Main-block__Item-coment__Table__Body
           .Main-block__Item-coment__Table__Body__Category
             発送日の目安
           .Main-block__Item-coment__Table__Body__Coment
-            1~2日で発送
+            = @item.preparation_day.status
       .Main-block__Item-coment__Icon
         .Main-block__Item-coment__Icon__Report
           .Main-block__Item-coment__Icon__Report__Icon
@@ -85,12 +87,17 @@
           = link_to '後ろの商品 >', "#", class: 'Item-btn'
 
     .Main-block__contents
-      .Main-block__contents__content__edit
-        = link_to '商品の編集', edit_item_path(@item.id), method: :get, class: 'edit'
-      .Main-block__contents__content__delite
-        = link_to '商品の削除', item_path(@item.id),method: :delete , class: 'delete'
+      - if user_signed_in? && current_user.id == @item.user_id
+        .Main-block__contents__edit
+          = link_to '商品の編集', '#', class: 'edit'
+      - if user_signed_in? && current_user.id == @item.user_id
+        .Main-block__contents__delete
+          = link_to '商品の削除', item_path(@item.id),method: :delete , class: 'delete'
+      - unless user_signed_in? && current_user.id == @item.user_id
+        .Main-block__contents__buy
+          = link_to '商品の購入', '#', class: 'buy'
     .Main-block__Related-items
-      = link_to 'ベビー・キッズをもっと見る', "#", class: 'Related-btn'
+      = link_to @item.category.root.name, "#", class: 'Related-btn'
       .PickupContainer__box__lists__list
         = link_to (image_tag 'pict-reason-02.jpg', class:'image_list', height:'150', width: '220'),'#'
         .PickupContainer__box__lists__list__contents

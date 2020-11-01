@@ -16,8 +16,9 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     if @item.save
     else
+      @item.item_images.new
       flash.now[:alert] = "必須情報が不足しています"
-      render :new, locals: {item: new}
+      render :new
     end
   end
 
@@ -30,6 +31,9 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
+    condition = Condition.data
+    @conditionStatus = condition[0][:status]
   end
 
   def destroy
