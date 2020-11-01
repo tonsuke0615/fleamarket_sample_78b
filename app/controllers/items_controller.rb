@@ -13,13 +13,11 @@ class ItemsController < ApplicationController
   end
 
   def create
-  # binding.pry
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path, notice: "出品が完了しました"
       
     else
-      # binding.pry
       @item.item_images.new
       flash.now[:alert] = "必須情報が不足しています"
       render :new
