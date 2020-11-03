@@ -18,8 +18,9 @@ class ItemsController < ApplicationController
       redirect_to root_path, notice: "出品が完了しました"
       
     else
+      @item.item_images.new
       flash.now[:alert] = "必須情報が不足しています"
-      render :new, locals: {item: new}
+      render :new
     end
   end
 
@@ -38,7 +39,10 @@ class ItemsController < ApplicationController
   end
 
   def show
-  end 
+    @item = Item.find(params[:id])
+    condition = Condition.data
+    @conditionStatus = condition[0][:status]
+  end
 
   def destroy
     unless @item.destroy
