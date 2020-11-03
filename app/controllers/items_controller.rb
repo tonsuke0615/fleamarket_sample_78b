@@ -25,15 +25,20 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @item.item_images.new
   end
 
   def update
     @item = Item.find(params[:id])
-    @item.update(item_params)
+    if @item.update(item_params)
+    else 
+      redirect_to edit_item_path(@item.id), method: :patch, alert:'更新できませんでした'
+    end
+    
   end
 
   def show
-  end
+  end 
 
   def destroy
     unless @item.destroy
@@ -61,7 +66,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :price, :detail, :brand, :category_id, :condition_id , :shipping_fee_id , :shipping_from_id, :preparation_day_id , item_images_attributes: [:src]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :price, :detail, :brand, :category_id, :condition_id , :shipping_fee_id , :shipping_from_id, :preparation_day_id , item_images_attributes: [:src, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_item
