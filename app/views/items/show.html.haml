@@ -40,7 +40,6 @@
             %li.CategoryName__1
               = link_to @item.category.root.name, "#", class: 'CategoryName'
             %li.CategoryName__2
-              = link_to @item.category.parent.name, "#", class: 'CategoryName'
             %li.CategoryName__3
               = link_to @item.category.name, "#", class: 'CategoryName'
         .Main-block__Item-coment__Table__Body
@@ -89,13 +88,13 @@
     .Main-block__contents
       - if user_signed_in? && current_user.id == @item.user_id
         .Main-block__contents__edit
-          = link_to '商品の編集', edit_item_path(@item.id), class: 'edit'
+          = link_to '商品の編集', edit_item_path(@item.id), method: :get , class: 'edit'
       - if user_signed_in? && current_user.id == @item.user_id
-        .Main-block__contents__delete
+        .Main-block__contents__content__delite
           = link_to '商品の削除', item_path(@item.id),method: :delete , class: 'delete'
       - unless user_signed_in? && current_user.id == @item.user_id
         .Main-block__contents__buy
-          = link_to '商品の購入', '#', class: 'buy'
+          = link_to '商品の購入' , '#', class: 'buy'
     .Main-block__Related-items
       = link_to @item.category.root.name, "#", class: 'Related-btn'
       .PickupContainer__box__lists__list
