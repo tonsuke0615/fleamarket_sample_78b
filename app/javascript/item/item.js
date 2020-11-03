@@ -3,7 +3,6 @@ window.addEventListener('load', function () {
   const buildFileField = (index)=> {
     const html = `<div class="Image-box"><div class="Image-box__top">
                   <label for="item_item_images_attributes_${index}_src">
-                  <i class="fas fa-camera Image-box__icon"></i>
                   <div class="Image-box__form" data-index="${index}"></div>
                   <input class="Image-box__uploader" type="file" name="item[item_images_attributes][${index}][src]" id="item_item_images_attributes_${index}_src">
                   </label></div><div class="Image-box__bottom"><span class="js-remove">削除</span></div></div>`;

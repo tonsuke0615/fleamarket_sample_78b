@@ -12,13 +12,18 @@
       .ImageField
         .Image-box
           .Image-box__top
-            %label{for: "item_item_images_attributes_0_src"}
-              = icon('fas', 'camera', class: "Image-box__icon")
-              = f.fields_for :item_images do |i|
-                .Image-box__form{data:{index: i.index}}
-                = i.file_field :src, {class: "Image-box__uploader"}
+            -# %label{for: "item_item_images_attributes_0_src"}
+            -#   = icon('fas', 'camera', class: "Image-box__icon")
+            = f.fields_for :item_images do |i|
+              .Image-box__form{data:{index: i.index}}
+              = i.file_field :src, {class: "Image-box__uploader"}
           .Image-box__bottom
             %span.js-remove 削除
+          - if @item.persisted?
+            .Image-box{ data: { index: @item.item_images.count} }
+              = file_field_tag :src, name: "item[item_images_attributes][#{@item.item_images.count}][src]", class: 'Image-box__uploader '
+              .remove
+                削除１
     .ItemInfo  
       .ItemInfo__text
         商品名
