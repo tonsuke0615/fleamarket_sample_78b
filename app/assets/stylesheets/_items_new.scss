@@ -19,28 +19,37 @@
 .ImageField {
   height: 180px;
   padding-top: 10px;
-  display: flex;
+  padding-left: 10px;
+  border: 1px dotted #3CCACE;
+  font-size: 12px;
   }
+.Image-box__top{
+  font-size: 12px;
+}
+.Image-box__bottom{
+  font-size: 12px;
+}
 
-.Image-box{
-  height: 170px;
-  width: 25%;
-  &__top{
-    height: 140px;
-    border: 1px dotted #3CCACE;
-  }
-  &__icon{
-    font-size: 50px;
-    color: lightgray;
-    margin-top: 50px;
-    margin-left: 55px;
-  }
-  &__uploader{
-    display: none;
-  }
-  &__bottom{
-    text-align: center;
-}}
+
+// .Image-box{
+//   height: 170px;
+//   width: 25%;
+//   &__top{
+//     height: 140px;
+//     border: 1px dotted #3CCACE;
+//   }
+//   &__icon{
+//     font-size: 50px;
+//     color: lightgray;
+//     margin-top: 50px;
+//     margin-left: 55px;
+//   }
+//   &__uploader{
+//     display: none;
+//   }
+//   &__bottom{
+//     text-align: center;
+// }}
 
 .js-remove{
   color: #3CCACE;
