@@ -95,7 +95,7 @@
           = link_to '商品の削除', item_path(@item.id),method: :delete , class: 'delete'
       - unless user_signed_in? && current_user.id == @item.user_id
         .Main-block__contents__buy
-          = link_to '商品の購入', '#', class: 'buy'
+          = link_to '商品の購入', item_purchase_index_path(@item.id), class: 'buy'
     .Main-block__Related-items
       = link_to @item.category.root.name, "#", class: 'Related-btn'
       .PickupContainer__box__lists__list
