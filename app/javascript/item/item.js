@@ -15,9 +15,9 @@ window.addEventListener('load', function () {
   }
 
   let fileIndex = [1,2,3];
-  // この下の２行書き足したので要検討
-  lastIndex = $('.Image-box__form:last').data('index');
-  fileIndex.splice(0, lastIndex);
+  // // この下の２行書き足したので要検討
+  // lastIndex = $('.Image-box__form:last').data('index');
+  // fileIndex.splice(0, lastIndex);
 
   $(document).on("change", ".Image-box__uploader", function(e) {
     if ($(".Image-box__uploader").length >= 4)
@@ -35,11 +35,4 @@ window.addEventListener('load', function () {
       $(this).parent().remove();
     if ($(".Image-box__uploader").length == 0) $('.ImageField').append(buildFileField(fileIndex[0]));
   });
-
-  // $(".Image_box__top").on('click', '.remove',function(){
-  //   const targetIndex = $(this).parent().data('index');
-  //   const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden`);
-  //   if (hiddenCheck) hiddenCheck.prop('checked', true);
-  // });
-
 });
