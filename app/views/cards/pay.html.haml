@@ -1,3 +1,5 @@
+= render 'items/top_header'
+
 .content
   .content__main
     .mypage-rightcontent
@@ -17,3 +19,5 @@
               = form_tag(card_delete_path, method: :post, id: 'charge-form', class: "card-content__delete--btn", name: "inputForm") do
                 %input{ type: "hidden", name: "card_id", value: "" }
                 %button.delete-btn 削除する
+
+= render 'items/bottom_footer'

@@ -1,3 +1,5 @@
+= render 'items/top_header'
+
 %section.main-contents
   .single-main
     %section.chapter__container
@@ -23,3 +25,5 @@
                   %button.delete__button 削除する
               .toppage_btn
                 = link_to 'トップページに戻る',root_path,class:"toppage_btn"
+
+= render 'items/bottom_footer'

@@ -1,3 +1,5 @@
+= render 'items/top_header'
+
 .buy-main
   .buy-main__box
     .buy-content
@@ -49,3 +51,5 @@
             山田太郎
             = form_tag(action: :pay, method: :post) do
               %button.buy-button{type:"submit"} 購入する
+
+= render 'items/bottom_footer'
