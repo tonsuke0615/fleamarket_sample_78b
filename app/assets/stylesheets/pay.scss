@@ -1,0 +1,24 @@
+.card-content {
+  display: flex;
+  height: 250px;
+  width: 350px;
+  align-items: center;
+  justify-content: center;
+  &__detail {
+    font-size: 24px;
+  }
+  &__delete {
+    &--btn {
+    }
+  }
+}
+
+.delete-btn {
+  background-color: #fff;
+  color: #68C7CC;
+  border-radius: 10px;
+  border: 1px solid #68C7CC;
+  font-size: 14px;
+  margin-left: 15px;
+  cursor: pointer;
+}

@@ -11,5 +11,5 @@ class User < ApplicationRecord
   validates :nickname, uniqueness: true
   has_one :profile, dependent: :destroy
   has_one :destination, dependent: :destroy
-
+  has_one :card, dependent: :destroy
 end

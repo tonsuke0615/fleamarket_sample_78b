@@ -12,6 +12,10 @@
       %ul.Main-block__Item-ditail__PictureBox
         %li.Main-block__Item-ditail__PictureBox__Main
           = image_tag @item.item_images.first.src.url, class: 'MainPicture'
+          -if @item.buyer_id != nil
+            .items-box_photo__sold
+              .items-box_photo__sold__inner
+                SOLD
         %ul.Main-block__Item-ditail__PictureBox__Sub
           %li.Main-block__Item-ditail__PictureBox__Sub__1
           - if @item.item_images.second.present?
@@ -93,9 +97,13 @@
       - if user_signed_in? && current_user.id == @item.user_id
         .Main-block__contents__delete
           = link_to '商品の削除', item_path(@item.id),method: :delete , class: 'delete'
-      - unless user_signed_in? && current_user.id == @item.user_id
+      - elsif @item.buyer_id == nil
         .Main-block__contents__buy
-          = link_to '商品の購入', '#', class: 'buy'
+          = link_to '商品の購入', item_purchase_index_path(@item.id), class: 'buy'
+      - else user_signed_in? && current_user.id == @item.user_id
+        .product-buy__btn__box
+          売り切れました
+
     .Main-block__Related-items
       = link_to @item.category.root.name, "#", class: 'Related-btn'
       .PickupContainer__box__lists__list
