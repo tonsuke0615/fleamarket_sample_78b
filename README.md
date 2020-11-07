@@ -57,7 +57,6 @@
 |card_id|references|null: false, foreign_key: true|
 |customer_id|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
-<!-- コードレビューしていないため、referenece型かinteger型なのかはテーブル作成時に要確認 -->
 
 ## Association
 - belongs_to :user
@@ -89,11 +88,9 @@
 |shipping_from|integer|null: false|
 |preparation_day|integer|null: false|
 |user|references|null: false, foreign_key: true|
-<!-- active_hashを使用するものはreference型ではなくintegerでforeign_keyも使用しない（レビューにて確認済） -->
+
 
 ### Association
-<!-- ブランドは任意記載なので紐づかないかもしれない-->
-<!-- - belongs_to :brand -->
 - belongs_to :user
 - belongs_to :category
 - belongs_to_active_hash :shippingFee
