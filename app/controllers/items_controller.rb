@@ -16,7 +16,6 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path, notice: "出品が完了しました"
-      
     else
       @item.item_images.new
       flash.now[:alert] = "必須情報が不足しています"
@@ -26,7 +25,6 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-    @item.item_images.new
   end
 
   def update
