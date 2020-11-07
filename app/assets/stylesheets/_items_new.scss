@@ -17,7 +17,7 @@
 }
 
 .ImageField {
-  height: 180px;
+  height: 500px;
   padding-top: 10px;
   padding-left: 10px;
   border: 1px dotted #3CCACE;
@@ -51,8 +51,8 @@
 //     text-align: center;
 // }}
 
-.js-remove{
-  color: #3CCACE;
+.hidden{
+  // display: none;
 }
 
 .ItemInfo {
