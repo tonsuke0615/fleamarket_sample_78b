@@ -10,20 +10,26 @@
       .ItemInfo__text--require
         ※必須
       .ImageField
-        .Image-box
-          .Image-box__top
-            -# %label{for: "item_item_images_attributes_0_src"}
-            -#   = icon('fas', 'camera', class: "Image-box__icon")
-            = f.fields_for :item_images do |i|
-              .Image-box__form{data:{index: i.index}}
-                = i.file_field :src, {class: "Image-box__uploader"}
-                .remove 削除
-              -# - if @item.persisted?
-              -#   = i.check_box :_destroy, data: { index: i.index }, class: 'hidden'
-            - if @item.persisted?
-              .Image-box{ data: { index: @item.item_images.count} }
-                = file_field_tag :src, name: "item[item_images_attributes][#{@item.item_images.count}][src]", class: 'Image-box__uploader '
-                .remove 削除
+        = f.fields_for :item_images do |i|
+          .ImageField__form
+            = i.label :src do
+              = icon('fas', 'camera', class: "ImageField__form--icon")
+              = i.file_field :src, class: "ImageField__form--uploader"
+        = f.fields_for :item_images do |i|
+          .ImageField__form
+            = i.label :src do
+              = icon('fas', 'camera', class: "ImageField__form--icon")
+              = i.file_field :src, class: "ImageField__form--uploader"
+        = f.fields_for :item_images do |i|
+          .ImageField__form
+            = i.label :src do
+              = icon('fas', 'camera', class: "ImageField__form--icon")
+              = i.file_field :src, class: "ImageField__form--uploader"
+        = f.fields_for :item_images do |i|
+          .ImageField__form
+            = i.label :src do
+              = icon('fas', 'camera', class: "ImageField__form--icon")
+              = i.file_field :src, class: "ImageField__form--uploader"
     .ItemInfo  
       .ItemInfo__text
         商品名
@@ -42,6 +48,51 @@
       .ItemInfo__text
         カテゴリ
       .ItemInfo__text--require
+        ※必須
+      .ItemInfo__category--form
+        = f.collection_select :category_id, @parents, :id, :name, {prompt: "選択してください"}, {class: "formSize", id: "category_form"}
+    .ItemInfo
+      .ItemInfo__text
+        ブランド（任意）
+      .ItemInfo__brand--form
+        = f.text_field :brand, placeholder: "(例)シャネル", class: "formSize", id: 'item_brand'
+    .ItemInfo
+      .ItemInfo__text
+        商品の状態
+      .ItemInfo__text--require
+        ※必須
+      .ItemInfo__condition--form
+      = f.collection_select :condition_id, Condition.all, :id, :status, {prompt: "選択してください"}, {class: "formSize", id: "condition_form"}
+    .ItemInfo
+      .ItemInfo__text
+        配送料負担
+      .ItemInfo__text--require
+        ※必須
+      .ItemInfo__shippingFee--form
+      = f.collection_select :shipping_fee_id, ShippingFee.all, :id, :status, {prompt: "選択してください"}, {class: "formSize", id: "shipping_fee_id"}
+    .ItemInfo
+      .ItemInfo__text
+        発送地
+      .ItemInfo__text--require
+        ※必須
+      .ItemInfo__shippingfrom--form
+      = f.collection_select :shipping_from_id, ShippingFrom.all, :id, :name, {prompt: "選択してください"}, {class: "formSize", id: "shipping_from_id"}
+    .ItemInfo
+      .ItemInfo__text
+        出荷までの日数
+      .ItemInfo__text--require
+        ※必須
+      .ItemInfo__operationDay--form
+      = f.collection_select :preparation_day_id, PreparationDay.all, :id, :status, {prompt: "選択してください"}, {class: "formSize", id: "preparation_day_id"}
+    .ItemInfo
+      .ItemInfo__text
+        価格(¥1〜9,999,999)
+      .ItemInfo__text--require
+        ※必須
+      .ItemInfo__price--form 
+      = f.number_field :price, placeholder: "0", min: 1, max: 9999999, class: "formSize__price"
+    .Button
+      = f.submit "出品する", class: "Button__submit"
         ※必須
       .ItemInfo__category--form
         = f.collection_select :category_id, @parents, :id, :name, {prompt: "選択してください"}, {class: "formSize", id: "category_form"}
