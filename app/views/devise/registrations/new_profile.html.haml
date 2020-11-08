@@ -10,16 +10,16 @@
           = f.label "氏　名", class: 'category'
           .User-set__MainlField__user-form__name__family
             = f.label "※必須", class: 'required'
-            = f.text_field :family_name, class: 'text_field', placeholder: '姓_全角', size: 22
+            = f.text_field :family_name, class: 'text_field', placeholder: '姓_全角', size: 18
           .User-set__MainlField__user-form__name__first
-            = f.text_field :first_name, class: 'text_field', placeholder: '名_全角', size: 22
+            = f.text_field :first_name, class: 'text_field', placeholder: '名_全角', size: 18
         .User-set__MainlField__user-form__name_kana
           = f.label "フリガナ", class: 'category'
           .User-set__MainlField__user-form__name_kana__family
             = f.label "※必須", class: 'required'
-            = f.text_field :family_name_kana, class: 'text_field', placeholder: 'セイ_全角', size: 22
+            = f.text_field :family_name_kana, class: 'text_field', placeholder: 'セイ_全角', size: 18
           .User-set__MainlField__user-form__name_kana__first
-            = f.text_field :first_name_kana, class: 'text_field', placeholder: 'メイ_全角', size: 22
+            = f.text_field :first_name_kana, class: 'text_field', placeholder: 'メイ_全角', size: 18
         .User-set__MainlField__user-form__birth_date
           = f.label "誕生日", class: 'category'
           = f.label "※必須", class: 'required'

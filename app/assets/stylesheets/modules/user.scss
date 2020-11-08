@@ -119,13 +119,24 @@
   text-align: center;
   vertical-align: middle;
   width: 40px;
-  font-size: 2px;
-  padding: 3px 5px;
+  height: 5px;
+  // font-size: 2px;
+  padding: 4px 4px;
 }
 
 .text_field{
   border: solid thin #3CCACE;
 }
+
+.has-error{
+  display: inline;
+}
+
+.help-block{
+  display: block;
+  text-align: end;
+}
+
 
 .User-set__MainlField__Submit{
   margin: 50px 0 70px 0;
@@ -149,7 +160,7 @@
   color: white;
   font-weight: bold;
   border: #3CCACE;
-  padding: 13px 60px;
+  padding: 13px 50px;
   width: 180px;
   line-height: 30px;
   cursor: pointer;

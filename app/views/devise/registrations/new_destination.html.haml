@@ -11,16 +11,16 @@
           = f.label "氏　名", class: 'category'
           .User-set__MainlField__destination-form__name__family
             = f.label "※必須", class: 'required'
-            = f.text_field :destination_family_name, class: 'text_field', placeholder: '姓_全角', size: 22
+            = f.text_field :destination_family_name, class: 'text_field', placeholder: '姓_全角', size: 18
           .User-set__MainlField__destination-form__name__first
-            = f.text_field :destination_first_name, class: 'text_field', placeholder: '名_全角', size: 22
+            = f.text_field :destination_first_name, class: 'text_field', placeholder: '名_全角', size: 18
         .User-set__MainlField__destination-form__name_kana
           = f.label "フリガナ", class: 'category'
           .User-set__MainlField__destination-form__name_kana__family
             = f.label "※必須", class: 'required'
-            = f.text_field :destination_family_name_kana, class: 'text_field', placeholder: 'セイ_全角', size: 22
+            = f.text_field :destination_family_name_kana, class: 'text_field', placeholder: 'セイ_全角', size: 18
           .User-set__MainlField__destination-form__name_kana__first
-            = f.text_field :destination_first_name_kana, class: 'text_field', placeholder: 'メイ_全角', size: 22
+            = f.text_field :destination_first_name_kana, class: 'text_field', placeholder: 'メイ_全角', size: 18
         .User-set__MainlField__destination-form__post_code
           = f.label "郵便番号", class: 'category'
           = f.label "※必須", class: 'required'
