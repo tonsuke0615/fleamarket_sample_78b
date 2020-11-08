@@ -80,6 +80,6 @@ $(document).on("change", ".child_category_id", function(){
     });
   }else{
     $(".grandchild_category_id").remove();  
-  }
-})
+  };
+});
 })
