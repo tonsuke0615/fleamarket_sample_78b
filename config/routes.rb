@@ -18,8 +18,23 @@ Rails.application.routes.draw do
     end
   end
   resources :orders
+
   get 'mypage/index', to: 'mypages#index'
   get 'mypage/logout', to: 'mypages#logout'
   get 'mypage/creditcard', to: 'mypages#creditcard'
-  get 'mypage/add-creditcard', to: 'mypages#add-creditcard'
+
+  resources :cards, only: [:new, :show, :destroy] do
+    collection do
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+    end
+  end
+  resources :items do
+    resources :purchase, only: [:index] do
+      collection do
+        post 'pay', to: 'purchase#pay'
+        get 'done', to: 'purchase#done'
+      end
+    end
+  end
 end

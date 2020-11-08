@@ -19,5 +19,5 @@ CarrierWave.configure do |config|
     }
     config.fog_directory = 'fleamarket-sample-78b' #S3のバケット名
     config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/fleamarket-sample-78b'
-  end  
+  end
 end

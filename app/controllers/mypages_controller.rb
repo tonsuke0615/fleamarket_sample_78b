@@ -7,5 +7,5 @@ class MypagesController < ApplicationController
 
   def creditcard
   end
-  
+
 end
