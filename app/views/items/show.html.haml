@@ -40,7 +40,7 @@
             %li.CategoryName__1
               = link_to @item.category.root.name, "#", class: 'CategoryName'
             %li.CategoryName__2
-             
+              = link_to @item.category.parent.root.name, "#", class: 'CategoryName'
             %li.CategoryName__3
               = link_to @item.category.name, "#", class: 'CategoryName'
         .Main-block__Item-coment__Table__Body

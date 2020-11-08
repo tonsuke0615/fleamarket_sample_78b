@@ -47,9 +47,9 @@
         .ItemInfo__text--require
           ※必須
         .ItemInfo__category--form
-          = f.collection_select :grandchild_category_id, @parents, :id, :name, {prompt: "選択してください"}, {class: "formSize", id: "category_form"}
-          = f.collection_select :child_category_id, @childrens, :id, :name, {prompt: "選択してください"}, {class: "formSize", id: "category_form"}
-          = f.collection_select :category_id, @grandchildrens, :id, :name, {prompt: "選択してください"}, {class: "formSize", id: "category_form"}
+          = f.collection_select :category_id, Category.roots, :id, :name, {prompt: "選択してください"}, {class: "formSize", id: "category_form"}
+          = f.collection_select :category_id, Category.roots, :id, :name, {prompt: "選択してください"}, {class: "formSize", id: "category_form"}
+          = f.collection_select :category_id, Category.roots, :id, :name, {prompt: "選択してください"}, {class: "formSize", id: "category_form"}
       .ItemInfo
         .ItemInfo__text
           ブランド（任意）
