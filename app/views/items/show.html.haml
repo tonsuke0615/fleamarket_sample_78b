@@ -44,7 +44,7 @@
             %li.CategoryName__1
               = link_to @item.category.root.name, "#", class: 'CategoryName'
             %li.CategoryName__2
-              -#= link_to @item.category.parent.name, "#", class: 'CategoryName'
+              = link_to @item.category.parent.name, "#", class: 'CategoryName'
             %li.CategoryName__3
               = link_to @item.category.name, "#", class: 'CategoryName'
         .Main-block__Item-coment__Table__Body
@@ -56,7 +56,7 @@
           .Main-block__Item-coment__Table__Body__Category
             商品のサイズ
           .Main-block__Item-coment__Table__Body__Coment
-            
+            名前
         .Main-block__Item-coment__Table__Body
           .Main-block__Item-coment__Table__Body__Category
             商品の状態
