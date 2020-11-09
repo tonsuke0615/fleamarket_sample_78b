@@ -1,4 +1,4 @@
-window.addEventListener('load', function () {
+window.addEventListener('turbolinks:load', function () {
 // 子レベルのselectタグ
 function add_childSelect_tag() {
   let child_select_form = `
