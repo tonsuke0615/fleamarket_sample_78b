@@ -16,9 +16,9 @@ window.addEventListener('load', function () {
   // // この下の２行書き足したので要検討
   lastIndex = $('.Image-box__form:last').data('index');
   fileIndex.splice(0, lastIndex);
-
+  
   $(document).on("change", ".Image-box__uploader", function(e) {
-    if ($(".Image-box__uploader").length >= 4)
+    if ($(".Image-box__uploader").length >= 4  )
       return false
     $(".ImageField").append(buildFileField(fileIndex[0]));
     fileIndex.shift();

@@ -23,13 +23,14 @@
               = i.file_field :src, {class: "Image-box__uploader"}
               .deletebox{data:{index: i}}
               .remove 削除する
-            - if @item.persisted?
+            - if @item.persisted? 
               = i.check_box :_destroy, data: { index: i.index}, class: "hidden"
-          -# - if @item.persisted? 
-          -#   .Image-box__form{ data: { index: @item.item_images.count} }
-          -#     = file_field_tag :src, name: "item[item_images_attributes][#{@item.item_images.count}][src]", class: 'Image-box__uploader '
-          -#   .deletebox
-          -#     .remove 削除する
+          - if @item.persisted? 
+            .Image-box__form{ data: { index: @item.item_images.count} }
+            -if @item.item_images.count <= 3
+              = file_field_tag :src, name: "item[item_images_attributes][#{@item.item_images.count}][src]", class: 'Image-box__uploader'
+              .deletebox
+                .remove 削除する
     .ItemInfo  
       .ItemInfo__text
         商品名

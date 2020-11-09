@@ -19,4 +19,5 @@ class Item < ApplicationRecord
   validates :user_id, :name, :detail, :price, :shipping_fee_id, :condition_id, :shipping_from_id, :preparation_day_id, presence: true
   validates_associated :item_images
   validates :item_images, presence: true
+  
 end
