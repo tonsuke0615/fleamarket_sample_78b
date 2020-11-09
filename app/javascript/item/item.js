@@ -1,4 +1,4 @@
-// const { htmlPrefilter } = require("jquery");
+const { htmlPrefilter } = require("jquery");
 
 window.addEventListener('load', function () {
 // $(document).on('turbolinks:load', ()=> {
@@ -12,7 +12,7 @@ window.addEventListener('load', function () {
   };
 
 
-  let fileIndex = [1,2,3,4,5];
+  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
   // // この下の２行書き足したので要検討
   lastIndex = $('.Image-box__form:last').data('index');
   fileIndex.splice(0, lastIndex);
@@ -51,37 +51,27 @@ window.addEventListener('load', function () {
   });
 
 
-  $(document).on('click',".remove", function(){
+  $(".ImageField").on('click',".remove", function(){
     // indexを取得する
-    let getIndex = $(this).parent().data('index');
-    console.log(getIndex)
+    const targetIndex = $(this).parent().data('index');
+    console.log(targetIndex)
 
     // IDを指定してチェックボックスにチェックを入れる
-    const a = $(`#item_item_images_attributes_${getIndex}__destroy`)
-    a.trigger("click");  
+    const a = $(`#item_item_images_attributes_${targetIndex}__destroy`)
+    a.trigger("click");   
     
     // inputタグのIDを取得する
-    const picData = $(`#item_item_images_attributes_${getIndex}_src`);　
+    const picData = $(`#item_item_images_attributes_${targetIndex}_src`);　
 
     // IDをremoveする
     $(picData).remove();
-    $(`img[data-index="${getIndex}"]`).remove();
+
+    // プレビューを消す記述
+    $(`img[data-index="${targetIndex}"]`).remove();
+
     $(this).parent(".Image-box__form").remove();
-  
-    // プレビューを消す記述ここでよいのか？
-    // $(`img[data-index="${getIndex}"]`).remove();
 
     if ($(".Image-box__uploader").length == 0) $('.ImageField').append(buildFileField(fileIndex[0]));
   });
 
-
-
-  // // $(".hidden").hide();
-  // $(document).on('click', '.remove', function() {
-  //   const targetIndex = $(this).parent().data('index');
-  //   const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden`);
-  //   if (hiddenCheck) hiddenCheck.prop('checked', true);
-  //     // $(this).parent(".Image-box__form").data().remove();
-  //   if ($(".Image-box__uploader").length == 0) $('.ImageField').append(buildFileField(fileIndex[0]));
-  // });
 });
