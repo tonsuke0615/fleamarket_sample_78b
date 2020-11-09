@@ -11,22 +11,29 @@
       .ItemInfo
         .ItemInfo__text
           商品画像
-        .ItemInfo__text--require
-          ※必須
-        .ImageField
-          .Image-box
-            .Image-box__top
-              -# %label{for: "item_item_images_attributes_0_src"}
-              -#   = icon('fas', 'camera', class: "Image-box__icon")
-              = f.fields_for :item_images do |i|
-                .Image-box__form{data:{index: i.index}}
-                  = i.file_field :src, {class: "Image-box__uploader"}
-                -# - if @item.persisted?
-                -#   = i.check_box :_destroy, data: { index: i.index }, class: 'hidden'
-            - if @item.persisted?
-              .Image-box{ data: { index: @item.item_images.count} }
-                = file_field_tag :src, name: "item[item_images_attributes][#{@item.item_images.count}][src]", class: 'Image-box__uploader '
-                .remove 削除
+      .ItemInfo__text--require
+        ※必須
+      .ImageField
+        = f.fields_for :item_images do |i|
+          .ImageField__form
+            = i.label :src do
+              = icon('fas', 'camera', class: "ImageField__form--icon")
+              = i.file_field :src, class: "ImageField__form--uploader"
+        = f.fields_for :item_images do |i|
+          .ImageField__form
+            = i.label :src do
+              = icon('fas', 'camera', class: "ImageField__form--icon")
+              = i.file_field :src, class: "ImageField__form--uploader"
+        = f.fields_for :item_images do |i|
+          .ImageField__form
+            = i.label :src do
+              = icon('fas', 'camera', class: "ImageField__form--icon")
+              = i.file_field :src, class: "ImageField__form--uploader"
+        = f.fields_for :item_images do |i|
+          .ImageField__form
+            = i.label :src do
+              = icon('fas', 'camera', class: "ImageField__form--icon")
+              = i.file_field :src, class: "ImageField__form--uploader"
       .ItemInfo  
         .ItemInfo__text
           商品名
