@@ -12,12 +12,9 @@
       .ImageField
         .Image-box
           .Image-box__top
-            -# カメラアイコン使用時のコードを残しています
-            -# %label{for: "item_item_images_attributes_0_src"}
-            -#   = icon('fas', 'camera', class: "Image-box__icon")
-          -# - @item.item_images.each_with_index do |image,i|
-          -#   .deletebox{data:{index: i}}
-          -#     .remove 削除
+          - if @item.persisted? 
+            - @item.item_images.each_with_index do |image,i|
+              = image_tag image.src.url, data: {index: i}, width: '120px', height: '120px'
           = f.fields_for :item_images do |i|
             .Image-box__form{data:{index: i.index}}
               = i.file_field :src, {class: "Image-box__uploader"}

@@ -17,16 +17,13 @@
 }
 
 .ImageField {
-  height: 200px;
+  height: 320px;
   padding-top: 10px;
   padding-left: 10px;
   border: 1px dotted #3CCACE;
   font-size: 12px;
   }
 .Image-box__top{
-  font-size: 12px;
-}
-.Image-box__bottom{
   font-size: 12px;
 }
 
@@ -50,6 +47,10 @@
 //   &__bottom{
 //     text-align: center;
 // }}
+
+.Image-box__uploader{
+  // display: none;
+}
 
 .hidden{
   display: none;
