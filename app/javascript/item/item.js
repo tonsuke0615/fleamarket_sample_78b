@@ -17,14 +17,14 @@ window.addEventListener('load', function () {
   lastIndex = $('.Image-box__form:last').data('index');
   fileIndex.splice(0, lastIndex);
 
-  // inputタグを変更すると４つまで新しいinputタグが生成される
-  $(document).on("change", ".Image-box__uploader", function(e) {
-    if ($(".Image-box__uploader").length >= 4  )
-      return false
-    $(".ImageField").append(buildFileField(fileIndex[0]));
-    fileIndex.shift();
-    fileIndex.push(fileIndex[fileIndex.length - 1] + 1 )
-  });
+  // // inputタグを変更すると４つまで新しいinputタグが生成される
+  // $(document).on("change", ".Image-box__uploader", function(e) {
+  //   if ($(".Image-box__uploader").length >= 4  )
+  //     return false
+  //   $(".ImageField").append(buildFileField(fileIndex[0]));
+  //   fileIndex.shift();
+  //   fileIndex.push(fileIndex[fileIndex.length - 1] + 1 )
+  // });
 
 
   // もともと記述ここからプレビュー関連
@@ -43,13 +43,18 @@ window.addEventListener('load', function () {
     if (img = $(`img[data-index="${targetIndex}"]`)[0]){
       img.setAttribute('src',blobUrl);
     } else {
-      $('.Image-box').append(buildImg(targetIndex, blobUrl));
-      $('.ImageField').append(buildFileField(fileIndex[0]));
-      fileIndex.shift();
-      fileIndex.push(fileIndex[fileIndex.length - 1] + 1 )
+      $('.Image-box__top').append(buildImg(targetIndex, blobUrl));
+
+      if ($(".Image-box__uploader").length < 4  ) {
+        $('.ImageField').append(buildFileField(fileIndex[0]));
+        fileIndex.shift();
+        fileIndex.push(fileIndex[fileIndex.length - 1] + 1 )
+      }
+
     };
   });
 
+// 　いま起きている現象=> JSによって呼び出されるファイルが違う場所にある
 
   $(".ImageField").on('click',".remove", function(){
     // indexを取得する
@@ -58,7 +63,7 @@ window.addEventListener('load', function () {
 
     // IDを指定してチェックボックスにチェックを入れる
     const a = $(`#item_item_images_attributes_${targetIndex}__destroy`)
-    a.trigger("click");   
+    a.prop("checked", true);   
     
     // inputタグのIDを取得する
     const picData = $(`#item_item_images_attributes_${targetIndex}_src`);　
