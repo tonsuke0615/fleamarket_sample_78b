@@ -17,7 +17,7 @@
 }
 
 .ImageField {
-  height: 400px;
+  height: 450px;
   padding-top: 10px;
   padding-left: 10px;
   border: 1px dotted #3CCACE;
@@ -27,29 +27,8 @@
   font-size: 12px;
 }
 
-
-// .Image-box{
-//   height: 170px;
-//   width: 25%;
-//   &__top{
-//     height: 140px;
-//     border: 1px dotted #3CCACE;
-//   }
-//   &__icon{
-//     font-size: 50px;
-//     color: lightgray;
-//     margin-top: 50px;
-//     margin-left: 55px;
-//   }
-//   &__uploader{
-//     display: none;
-//   }
-//   &__bottom{
-//     text-align: center;
-// }}
-
 .Image-box__uploader{
-  // display: none;
+  color: #3CCACE;
 }
 
 .hidden{
