@@ -53,8 +53,8 @@
             ※必須
           .ItemInfo__category--form
             = f.collection_select :category_id, Category.roots, :id, :name, {prompt: "選択してください" , selected: @item.category.root_id}, {class: "formSize", id: "category_form"}
-            = f.collection_select :category_id, @item.category.parent.siblings, :id, :name, {prompt: "選択してください" , selected: @item.category.parent_id}, {class: "formSize", id: "category_form"}
-            = f.collection_select :category_id, @item.category.siblings, :id, :name, {prompt: "選択してください"}, {class: "formSize", id: "category_form"}
+            = f.collection_select :category_id, @item.category.parent.siblings, :id, :name, {prompt: "選択してください" , selected: @item.category.parent_id}, {class: "formSize child_category_id", id: "category_form"}
+            = f.collection_select :category_id, @item.category.siblings, :id, :name, {prompt: "選択してください"}, {class: "formSize grandchild_category_id", id: "category_form"}
         .ItemInfo
           .ItemInfo__text
             ブランド（任意）
