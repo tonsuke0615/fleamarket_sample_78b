@@ -22,7 +22,7 @@ window.addEventListener('load', function () {
   }
 
   // 画像のプレビューが追加される
-  $(".ImageField").on('change', ".Image-box__uploader", function(e){
+  $(document).on('change', ".Image-box__uploader", function(e){
     const targetIndex = $(this).parent().data('index');
     console.log(targetIndex)
     const file = e.target.files[0];
@@ -39,7 +39,7 @@ window.addEventListener('load', function () {
     };
   });
 
-  $(".ImageField").on('click',".remove", function(){
+  $(document).on('click',".remove", function(){
     // indexを取得する
     const targetIndex = $(this).parent().data('index');
     console.log(targetIndex)
@@ -57,7 +57,7 @@ window.addEventListener('load', function () {
     // プレビューを消す記述
     $(`img[data-index="${targetIndex}"]`).remove();
     $(this).parent(".Image-box__form").remove();
-    
+
     // inputタグが０にならない
     if ($(".Image-box__uploader").length == 0) $('.ImageField').append(buildFileField(fileIndex[0]));
   });
