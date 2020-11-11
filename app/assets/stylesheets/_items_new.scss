@@ -17,28 +17,25 @@
 }
 
 .ImageField {
-  height: 170px;
-  display: flex;
-  align-items: center;
-  &__form {
-      height: 80%;
-      width: 25%;
-      border: 1px dotted #3CCACE;
-      text-align: center;
-    &--icon {
-      font-size: 50px;
-      color: lightgray;
-      margin-top: 40px;
-    }
-    &--uploader {
-      display: none;
-    }
-    &--message {
-      display: block;
-      color: lightgray;
-      text-align: center;
-    }
+  height: 450px;
+  padding-top: 10px;
+  padding-left: 10px;
+  border: 1px dotted #3CCACE;
+  font-size: 12px;
   }
+.Image-box__top{
+  font-size: 12px;
+}
+
+.Image-box__uploader{
+  color: #3CCACE;
+}
+
+.hidden{
+  display: none;
+}
+.remove{
+  color: lightgray;
 }
 
 .ItemInfo {

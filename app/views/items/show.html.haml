@@ -93,7 +93,7 @@
     .Main-block__contents
       - if user_signed_in? && current_user.id == @item.user_id
         .Main-block__contents__edit
-          = link_to '商品の編集', '#', class: 'edit'
+          = link_to '商品の編集', edit_item_path(@item.id), class: 'edit'
       - if user_signed_in? && current_user.id == @item.user_id
         .Main-block__contents__delete
           = link_to '商品の削除', item_path(@item.id),method: :delete , class: 'delete'
